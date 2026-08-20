@@ -1,0 +1,467 @@
+================================================================================
+                      AXWELL HUB — COMPLETE PROJECT RECORD
+               Unified Next.js App (5 projects merged into 1)
+                  Location: axwell-hub/
+================================================================================
+
+PROJECT OVERVIEW
+----------------
+Name:            axwell-hub
+Framework:       Next.js 16.2.10 (App Router)
+React:           19.2.4
+Styling:         Tailwind CSS v4 (@tailwindcss/postcss)
+Animations:      Framer Motion 12.42.2, GSAP 3.15
+Fonts:           JUST Sans (custom), Poppins, Plus Jakarta Sans
+Background:      #020109 (dark)
+Accent:          #0FB6AE (cyan/teal)
+
+BUILDS:          ✓ Compiled successfully
+ROUTES:          5 pages + 2 API routes
+
+
+================================================================================
+                           ROUTES & NAVIGATION
+================================================================================
+
+Route                         Source Project     Description
+---------------------------- ------------------ ---------------------------
+/                             axwell-intro       Intro portal (2x2 grid)
+/production-and-media         axwell-landing     OP Productions landing
+/first-light                  music-producer     First Light event site
+/contact                      axwell-contact     Contact page + form
+/our-team                     axwell-team        Team/crew grid
+/api/otp/send                 music-producer     OTP email endpoint
+/api/otp/verify               music-producer     OTP verification endpoint
+
+INTERNAL LINKS:
+  / → /first-light            (First Light box)
+  / → /production-and-media   (Production & Media box)
+  / → /our-team               (Our Team box)
+  / → /contact                (Contact Us box)
+  /production-and-media → /first-light  (floating pill)
+  /first-light → /production-and-media  (floating pill)
+
+
+================================================================================
+                     PAGE 1: / (INTRO PORTAL)
+================================================================================
+
+Source: axwell-intro
+Route:  /
+
+Description:
+  Full-screen 2x2 grid portal linking to all sub-pages.
+  Breathing cyan glow loader animation.
+  Custom cursor on desktop.
+
+Components:
+  - Hero.tsx           2x2 grid with Sparkles/Clapperboard/UsersRound/MessageSquare icons
+  - InitialLoader      Shared breathing glow loader (in layout)
+  - CustomCursor       Shared framer-motion cursor (in layout)
+
+Navigation:
+  Top-Left:     First Light → /first-light
+  Top-Right:    Production & Media → /production-and-media
+  Bottom-Left:  Our Team → /our-team
+  Bottom-Right: Contact Us → /contact
+  Center Logo:  → /production-and-media
+  Mobile Logo:  → /production-and-media
+
+Design:
+  Background: gradient from-[#1E0A15] via-[#075d59] to-[#1E0A15]
+  Border:     #0FB6AE/20 between grid boxes
+  Font:       font-plus (Plus Jakarta Sans)
+
+
+================================================================================
+                PAGE 2: /production-and-media (LANDING)
+================================================================================
+
+Source: axwell-landing
+Route:  /production-and-media
+
+Description:
+  Full-length OP Productions landing page with video hero, poster slider,
+  about section, services card stack, work portfolio, and contact info.
+
+Section Order:
+  1. Navbar2          Center-logo nav (HOME, ABOUT, SERVICES, WORK)
+  2. Hero             VideoHero + PosterSlider
+  3. About            "The future, on screen"
+  4. Services         8-card scroll-linked stack (Pre Production → Event Management)
+  5. Work             6-project portfolio list
+  6. Contact          Offices (Karachi + LA) + 6 social links
+  7. Footer           "Developed by PR Media LLC"
+
+Floating Pill:
+  "Go To First Light" → /first-light
+  Hides when Contact section enters viewport
+
+VideoHero:
+  - echoboomers.mp4 (Echo Boomers, 2020)
+  - michelshort.mp4 (King of Pop, 2026)
+  Auto-advances on video end, left/right arrows, dot indicators
+  WATCH buttons → IMDB links
+
+PosterSlider:
+  - post1.jpg (Echo Boomers)
+  - post2.jpg (OuttaBounds)
+  - poster1.webp (King Of Pop)
+  - post4.jpg (Van Gogh)
+  - post5.jpg (Grief)
+  Infinite scrolling with spring animations
+
+Services (8 cards):
+  1. Pre Production
+  2. Filming
+  3. Top Producers
+  4. Editing
+  5. Distribution Atlas
+  6. Event Planning
+  7. First Light
+  8. Event Management
+
+Work (6 projects):
+  1. Echo Boomers (2020, Feature)
+  2. OuttaBounds (2022, Short)
+  3. King of Pop (In Development)
+  4. Van Gogh (In Development)
+  5. Untitled Grief Drama (In Development)
+  6. Untitled Thriller (In Development)
+
+Contact:
+  Email: info@opproductions.com
+  Karachi: 10-C Kh-e-Shahbaz, D.H.A Phase 6
+  LA: 112 W 9th St, Ste 812
+  Phone: +92 300 8204263 / +1 561 360 6910
+  Socials: Instagram, YouTube, LinkedIn, Facebook, TikTok, X (3x2 grid)
+
+Assets Used:
+  public/images/logo.png, post1.jpg, post2.jpg, post4.jpg, post5.jpg, poster1.webp
+  public/videos/echoboomers.mp4, michelshort.mp4
+
+
+================================================================================
+               PAGE 3: /first-light (MUSIC PRODUCER / EVENT)
+================================================================================
+
+Source: music-producer
+Route:  /first-light
+
+Description:
+  Full First Light music event site with countdown, artist reveals,
+  ticketing, FAQs, policies, and venue map.
+
+Section Order:
+  1. CountdownIntroModal    Opening animation (4.5s)
+  2. Hero                   Full-screen hero with event branding
+  3. Revealing              Shadow → reveal animation; countdown to event
+  4. ImpactStats            Key event statistics
+  5. Artists                Artist cards carousel with detail modal
+  6. SetTimes               Running order timeline
+  7. Map2                   Venue map with interactive hover cards
+  8. Tickets                Ticket tier cards with purchase flow
+  9. DosAndDonts            Event guide (Do's and Don'ts)
+  10. TicketPolicies        Terms & conditions
+  11. FAQs                  Frequently asked questions + analog clocks
+  12. Newsletter            Email signup
+  13. Footer                Site footer
+
+Floating Pill:
+  "Go To OP Productions" → /production-and-media
+  Hides when footer enters viewport
+
+EVENT DETAILS:
+  Event:      First Light
+  Date:       Friday, 4 September 2026
+  Venue:      DHA Golf Club (Moin Khan Academy), Phase 8, Karachi
+  Producer:   OP Productions
+  Age:        Strictly 18+ (Bronze/Silver/Gold 15+)
+  Ticketing:  Ticketwala
+
+ARTISTS & SET TIMES:
+  16:00       Gates Open
+  17:00-17:45 Bilal Brohi     Opening Act 1st   Techno, Underground
+  19:00-19:45 Mahnoor         Opening Act
+  20:20-21:05 MR Shotbox      Opening Act 3rd   House, Bass
+  21:25-22:15 Bilal Brohi     Support           Techno, Underground
+  22:45-00:00 AXWELL          Headliner         Progressive, Big Room
+
+TICKET TIERS:
+  Tier            Early Bird     Regular       Capacity  Gate    Time
+  --------------- -------------- ------------- --------- ------- ------
+  Bronze          PKR 6,500      PKR 8,500     1,200     Gate 4  4:00 PM
+  Silver          PKR 10,500     PKR 12,500    445       Gate 3  4:00 PM
+  Gold            PKR 14,999     PKR 18,500    200       Gate 2  4:15 PM
+  Gold (Women's)  PKR 12,999     PKR 14,999    200       Gate 2  4:15 PM
+  VVIP            PKR 25,000     PKR 30,000    50        Gate 1  4:00 PM
+  PLATINUM        PKR 45,000     PKR 50,000    5         Gate 1  4:30 PM
+
+  Add-on: First Light Founding Member — +PKR 1,500/ticket
+
+SOCIAL LINKS (OP Productions):
+  Instagram:  instagram.com/opproductionsofficial
+  Facebook:   facebook.com/share/1A59o5yTYr
+  TikTok:     tiktok.com/@opproductionsofficial
+  YouTube:    youtube.com/@opproductionsofficial1
+  X:          x.com/OPPOfficial
+  LinkedIn:   linkedin.com/company/99193478
+
+API ROUTES:
+  POST /api/otp/send    → Sends OTP via SMTP (nodemailer)
+  POST /api/otp/verify  → Verifies OTP code
+
+Components (35 files):
+  src/pages/Home/Main.tsx
+  src/components/first-light/Hero.tsx
+  src/components/first-light/Revealing.tsx
+  src/components/first-light/EventCountdown.tsx
+  src/components/first-light/ImpactStats.tsx
+  src/components/first-light/Artists.tsx
+  src/components/first-light/ArtistDetailModal.tsx
+  src/components/first-light/SetTimes.tsx
+  src/components/first-light/Map2.tsx
+  src/components/first-light/DosAndDonts.tsx
+  src/components/first-light/TicketPolicies.tsx
+  src/components/first-light/Faqs.tsx
+  src/components/first-light/Newsletter.tsx
+  src/components/first-light/Footer.tsx
+  src/components/first-light/CountdownIntroModal.tsx
+  src/components/first-light/Venue.tsx
+  src/components/first-light/WhatsAppButton.tsx
+  src/components/first-light/SmoothScroll.tsx
+  src/components/first-light/SecurityProvider.tsx
+  src/components/first-light/Tickets/index.tsx
+  src/components/first-light/Tickets/data.ts
+  src/components/first-light/Tickets/types.ts
+  src/components/first-light/Tickets/constants.ts
+  src/components/first-light/Tickets/fonts.ts
+  src/components/first-light/Tickets/components/TicketCard.tsx
+  src/components/first-light/Tickets/components/PremiumTicketCard.tsx
+  src/components/first-light/Tickets/components/TicketDetailModal.tsx
+  src/components/first-light/Tickets/components/TicketRegistrationModal.tsx
+  src/components/first-light/Tickets/components/TicketPriceActions.tsx
+  src/components/first-light/Tickets/components/TicketStub.tsx
+  src/components/first-light/Tickets/components/TicketPerforationLine.tsx
+  src/components/first-light/Tickets/components/TicketEdgeNotches.tsx
+  src/components/first-light/Tickets/components/Barcode.tsx
+  src/components/first-light/Tickets/components/TicketsBackground.tsx
+  src/lib/otp.ts
+  src/app/api/otp/send/route.ts
+  src/app/api/otp/verify/route.ts
+
+
+================================================================================
+                   PAGE 4: /contact (CONTACT)
+================================================================================
+
+Source: axwell-contact
+Route:  /contact
+
+Description:
+  Contact page with inquiry form, office addresses, and social links.
+
+Section Order:
+  1. Hero          "Let's Talk" heading + 50/50 split grid
+  2. Contact       Email, offices, social links (3x2 grid)
+  3. ContactForm   Name, email, phone, enquiry type, message + submit
+
+Contact Info:
+  Email: info@opproductions.com
+  Karachi: 10-C Kh-e-Shahbaz, D.H.A Phase 6, Pakistan
+  LA: 112 W 9th St, Ste 812, Los Angeles, CA, USA
+  Phone: +92 300 8204263 / +1 561 360 6910
+
+Social Links (3x2 grid):
+  Instagram, YouTube, LinkedIn
+  Facebook, TikTok, X
+
+Form Fields:
+  - Name (required)
+  - Email (required)
+  - Phone (required)
+  - Enquiry Type (dropdown: Film Production, Creative Visual Campaign, Event Management, General Inquiry)
+  - Message (required)
+  - Submit → simulated API call (1.5s) → success screen (3s) → reset
+
+Components:
+  src/components/contact/Hero.tsx
+  src/components/contact/Contact.tsx
+  src/components/contact/ContactForm.tsx
+
+
+================================================================================
+                  PAGE 5: /our-team (TEAM)
+================================================================================
+
+Source: axwell-team
+Route:  /our-team
+
+Description:
+  Team/crew grid with portrait cards and detail modal popup.
+
+Section Order:
+  1. Hero          "THE CREW" heading + staggered 4-column grid + modal
+
+TEAM MEMBERS (9):
+  ID  Name                  Role                 Image
+  --- -------------------- -------------------- -----------
+  01  Omer H. Paracha       CEO                  image8.jpeg
+  02  Muhammad Zouhaib      MD                   image3.jpeg
+  03  Omar Hassan           Executive Director   (placeholder)
+  04  Omar Ovais Akram      Executive Director   image4.jpeg
+  05  Saif Aly Khan         Head Of Legal        image1.jpeg
+  06  Nadeem Kazmi          Senior Manager       image2.jpeg
+  07  Khairaza Khan         Senior Manager       image7.jpeg
+  08  Shahista Zohaib       Manager              image5.jpeg
+  09  Solomon Yaqub         Associate Manager    image6.jpeg
+
+Design:
+  Grid: 1-col mobile, 2-col sm, 4-col lg
+  Staggered: odd items offset md:mt-16
+  Modal: AnimatePresence + spring animation
+  Colors: cyan #0FB6AE, purple #491833, dark #0c030c
+
+Components:
+  src/components/team/Hero.tsx
+
+
+================================================================================
+                       SHARED COMPONENTS
+================================================================================
+
+src/common/InitialLoader.tsx
+  Breathing cyan glow loader. Shows for 800ms after window load.
+  Locks body scroll during load. Fades out with 1000ms transition.
+
+src/components/common/CustomCursor.tsx
+  Framer-motion cursor. Follows mouse with spring physics.
+  Scales up 2x with cyan tint on hover over buttons/links.
+  Desktop only (hidden md:block).
+
+src/components/common/Footer.tsx
+  Simple footer: "Developed by PR Media LLC"
+
+src/components/SmoothScroll.tsx
+  Lenis smooth scrolling wrapper.
+
+src/components/SecurityProvider.tsx
+  Security provider wrapper.
+
+
+================================================================================
+                       DESIGN SYSTEM
+================================================================================
+
+Colors:
+  Background:    #020109 (dark)
+  Accent:        #0FB6AE (cyan/teal)
+  Secondary:     #18060f (dark maroon)
+  Purple:        #491833
+  White:         #ffffff / rgba(255,255,255, varying)
+
+Fonts:
+  font-just:     JUST Sans (custom, 400 + 800)
+  font-pop:      Poppins (300-900)
+  font-plus:     Plus Jakarta Sans (200-800)
+
+Shared Classes:
+  .animate-glow-outer   Breathing loader animation
+  .animate-glow-inner   Core loader animation
+  .site-reveal          Post-intro reveal transition
+  .venue-reveal         Scroll reveal (translateY)
+  .venue-reveal-item    Scroll reveal (translateX)
+  .hero-*               Various hero animations (parallax, tilt, particles, etc.)
+  .policy-*             Ticket policy card styles
+  .footer-*             Footer animations (neon sweep, marquee, logo glow)
+
+
+================================================================================
+                       ASSETS INVENTORY
+================================================================================
+
+public/images/:
+  logo.png              OP Productions logo (used in all InitialLoaders)
+  image1-8.jpeg         Team member portraits
+  post1-5.jpg           Poster slider images
+  poster1.webp          Poster slider image
+  hero*.avif            Hero background images
+  Logo.png, Logo1.png   Alternate logos
+  hero.jpeg, hero1.png  Hero images
+  heroBg*.jpeg/png      Hero background variations
+
+public/videos/:
+  echoboomers.mp4       Echo Boomers movie trailer
+  michelshort.mp4       King of Pop documentary trailer
+
+public/fonts/just_sans/:
+  JUST Sans Regular.*   Regular weight (woff2, woff, otf)
+  JUST Sans ExBold.*    Extra bold weight (woff2, woff, otf)
+  Doxent-Regular.ttf    Alternate regular
+
+src/assets/:
+  axwell*.png/jpeg      Axwell artist images (5 files)
+  brohi*.png/webp       Bilal Brohi artist images (3 files)
+  hazey.png             Hazey artist image
+  mahnoor.*             Mahnoor artist images (jpg, png)
+  shotbox.*             Shotbox artist images (jpg, png)
+  shadow*.png           Shadow/reveal images (6 files)
+  heroBg*.jpeg/png      Hero backgrounds
+
+
+================================================================================
+                       TECHNICAL DETAILS
+================================================================================
+
+Framework:      Next.js 16.2.10 (App Router, Turbopack)
+React:          19.2.4
+TypeScript:     5.x
+Styling:        Tailwind CSS v4 (CSS-first, @theme inline)
+Animations:     Framer Motion 12.42.2, GSAP 3.15
+Scrolling:      Lenis 1.3.23
+Notifications:  Sonner 2.0.7
+Icons:          Lucide React 1.23.0, React Icons 5.7.0
+Email:          Nodemailer 8.0.10 (OTP)
+Build:          Turbopack (fast compilation)
+
+Path Aliases:   @/* → ./src/*
+Config:         next.config.ts (reactCompiler: true, ignoreBuildErrors: true)
+PostCSS:        @tailwindcss/postcss
+
+DEPENDENCIES:
+  @gsap/react, framer-motion, gsap, lenis, lucide-react,
+  next, nodemailer, react, react-dom, react-icons, sonner
+
+DEV DEPENDENCIES:
+  @tailwindcss/postcss, @types/node, @types/nodemailer,
+  @types/react, @types/react-dom, babel-plugin-react-compiler,
+  eslint, eslint-config-next, tailwindcss, typescript
+
+
+================================================================================
+                       BUILD STATUS
+================================================================================
+
+  ✓ Compiled successfully
+  ✓ 11/11 static pages generated
+  ✓ All 5 routes working
+  ✓ API routes functional
+
+  Routes:
+  ┌ ○ /                      (Static)
+  ├ ○ /contact               (Static)
+  ├ ○ /first-light           (Static)
+  ├ ○ /our-team              (Static)
+  ├ ○ /production-and-media  (Static)
+  ├ ƒ /api/otp/send          (Dynamic)
+  └ ƒ /api/otp/verify        (Dynamic)
+
+
+================================================================================
+                       LAST UPDATED
+================================================================================
+  Date: August 2026
+  Status: All 5 projects merged into unified axwell-hub
+  Build: Passing — no errors
+
+================================================================================
