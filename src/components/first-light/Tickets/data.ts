@@ -178,7 +178,7 @@ export const TICKETS: Ticket[] = [
     minPerID: 1,
     maxPerID: 5,
     featured: false,
-    color: "#FFD700",
+    color: "#f43f5e",
     features: [
       "Women-only Gold enclosure (Pink Section)",
       "Dedicated female security and staff",
