@@ -88,7 +88,9 @@ const Hero = () => {
 
           <div className="flex shrink-0 items-center">
             <a
-              href="#tickets"
+              href="https://ticketwala.pk/event/first-light-axwell-6005"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hero-cta-shine group relative flex shrink-0 items-center gap-1.5 overflow-hidden rounded-full bg-gradient-to-r from-[#0FB6AE] to-[#0FB6AE] px-4 py-2 text-[10px] font-medium uppercase tracking-wider text-[#0E010E] shadow-[0_0_20px_rgba(15,182,174,0.25)] transition-all duration-300 hover:from-[#18060F] hover:to-[#18060F] hover:text-white hover:shadow-[0_0_28px_rgba(24,6,15,0.4)] active:scale-95 sm:px-5 sm:py-2.5 sm:text-[11px]"
             >
               <Ticket size={14} strokeWidth={2.5} />

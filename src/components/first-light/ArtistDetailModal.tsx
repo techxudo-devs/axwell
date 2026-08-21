@@ -243,7 +243,7 @@ const ArtistDetailModal = ({ artist, onClose }: ArtistDetailModalProps) => {
             priority
             draggable={false}
             className={`object-cover brightness-95 contrast-[1.05] transition-transform duration-500 ${
-              artist.artist === "Axwell" ? "scale-125" : ""
+              artist.artist === "Axwell" ? "" : ""
             }`}
             // className={`object-cover brightness-95 contrast-[1.05] transition-transform duration-500 ${
             //   artist.artist === "Axwell" ? "scale-110" : ""

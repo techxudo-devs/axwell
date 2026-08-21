@@ -154,7 +154,6 @@ const Tickets = () => {
         <TicketDetailModal
           ticket={activeDetailsTicket}
           onClose={() => setActiveModal(null)}
-          onBuyNow={(ticket) => setActiveModal({ type: "register", ticket })}
         />
       )}
 

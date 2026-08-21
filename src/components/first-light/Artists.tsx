@@ -21,7 +21,7 @@ import Image from "next/image";
 import brohiImg from "@/assets/brohi2.png";
 import hazey from "@/assets/hazey.png";
 import shotbox from "@/assets/shotbox.png";
-import axwell from "@/assets/axwell2.png";
+import axwell from "@/assets/ax4.png";
 import ArtistDetailModal, {
   type Artist,
   type ArtistExtra,
@@ -297,7 +297,7 @@ const Artists = () => {
                       fill
                       priority
                       draggable={false}
-                      className={`object-cover select-none brightness-95 contrast-[1.1] transition-transform duration-500 ${card.artist === "Axwell" ? "translate-y-2 scale-125" : ""}`}
+                      className={`object-cover select-none brightness-95 contrast-[1.1] transition-transform duration-500 ${card.artist === "Axwell" ? "translate-y-2" : ""}`}
                     />
 
                     {/* --- Floating "View Profile" Tag --- */}

@@ -106,11 +106,16 @@ const CountdownIntroModal = ({ active, onClose }: CountdownIntroModalProps) => {
             </div>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <button className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#0FB6AE] to-[#0FB6AE] px-8 py-4 text-[12px] font-medium uppercase tracking-wider text-[#0E010E] shadow-[0_4px_35px_rgba(15,182,174,0.35)] transition-all duration-300 hover:shadow-[0_6px_45px_rgba(15,182,174,0.55)] active:scale-[0.98] sm:w-auto sm:text-[13px]">
+              <a
+                href="https://ticketwala.pk/event/first-light-axwell-6005"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-gradient-to-r from-[#0FB6AE] to-[#0FB6AE] px-8 py-4 text-[12px] font-medium uppercase tracking-wider text-[#0E010E] shadow-[0_4px_35px_rgba(15,182,174,0.35)] transition-all duration-300 hover:shadow-[0_6px_45px_rgba(15,182,174,0.55)] active:scale-[0.98] sm:w-auto sm:text-[13px]"
+              >
                 <Ticket size={17} strokeWidth={2.5} />
                 Buy Tickets Now
                 <ChevronRight size={17} strokeWidth={2.5} className="transition-transform group-hover:translate-x-1" />
-              </button>
+              </a>
               <button
                 type="button"
                 onClick={onClose}
