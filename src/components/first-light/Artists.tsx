@@ -21,7 +21,7 @@ import Image from "next/image";
 import brohiImg from "@/assets/brohi2.png";
 import hazey from "@/assets/hazey.png";
 import shotbox from "@/assets/shotbox.png";
-import axwell from "@/assets/ax4.png";
+import axwell from "@/assets/axwell9.svg";
 import ArtistDetailModal, {
   type Artist,
   type ArtistExtra,
