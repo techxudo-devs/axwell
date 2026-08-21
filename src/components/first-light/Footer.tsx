@@ -9,7 +9,7 @@ const FOOTER_LINKS = [
   { label: "Tickets", href: "#tickets" },
   { label: "Venue", href: "#venue" },
   { label: "FAQ", href: "#faqs" },
-  { label: "Ticketwala", href: "#tickets" },
+  { label: "Ticketwala", href: "https://ticketwala.pk/event/first-light-axwell-6005" },
 ] as const;
 
 const MARQUEE_ITEMS = [
@@ -123,6 +123,8 @@ const Footer = () => {
             <span key={link.label} className="flex items-center gap-2.5 sm:gap-3">
               <a
                 href={link.href}
+                target={link.href.startsWith("http") ? "_blank" : undefined}
+                rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className={`font-just text-xl sm:text-2xl uppercase text-white/70 transition-all duration-300 hover:text-[#0FB6AE] hover:drop-shadow-[0_0_12px_rgba(15,182,174,0.5)]`}
               >
                 {link.label}
