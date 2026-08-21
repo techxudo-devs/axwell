@@ -46,7 +46,6 @@ export interface TicketCardProps {
 export interface TicketDetailModalProps {
   ticket: Ticket;
   onClose: () => void;
-  onBuyNow: (ticket: Ticket) => void;
 }
 
 export interface TicketRegistrationModalProps {

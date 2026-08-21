@@ -11,7 +11,7 @@ import Barcode from "./Barcode";
 
 gsap.registerPlugin(useGSAP);
 
-const TicketDetailModal = ({ ticket, onClose, onBuyNow }: TicketDetailModalProps) => {
+const TicketDetailModal = ({ ticket, onClose }: TicketDetailModalProps) => {
   const root = useRef<HTMLDivElement>(null);
   const accent = ticket.featured ? "#0FB6AE" : "#ffffff";
 
@@ -340,9 +340,10 @@ const TicketDetailModal = ({ ticket, onClose, onBuyNow }: TicketDetailModalProps
           </div>
 
           {/* CTAs */}
-          <button
-            type="button"
-            onClick={() => onBuyNow(ticket)}
+          <a
+            href="https://ticketwala.pk/event/first-light-axwell-6005"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`font-just modal-cta group mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-[#0FB6AE] py-4 text-center text-lg uppercasest text-[#02010A] shadow-[0_0_30px_rgba(15,182,174,0.25)] transition-all duration-300 hover:shadow-[0_0_40px_rgba(15,182,174,0.45)] active:scale-[0.98]`}
           >
             Buy Now
@@ -350,7 +351,7 @@ const TicketDetailModal = ({ ticket, onClose, onBuyNow }: TicketDetailModalProps
               size={18}
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
-          </button>
+          </a>
         </div>
         </div>
       </div>
