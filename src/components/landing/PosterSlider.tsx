@@ -157,7 +157,9 @@ const PosterSlider: React.FC = () => {
                       src={poster.img}
                       alt={poster.title}
                       className="w-full h-full object-cover"
-                      loading="eager"
+                      loading="lazy"
+                      decoding="async"
+                      draggable={false}
                     />
                   </div>
 

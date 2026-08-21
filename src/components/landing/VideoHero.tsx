@@ -34,7 +34,23 @@ const videos = [
 const VideoHero: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  // Second video is heavy (~11MB): don't download it on initial page
+  // load — prefetch it in the background once the page has settled.
+  const [loadSecond, setLoadSecond] = useState(false);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
+
+  useEffect(() => {
+    const idle =
+      typeof window !== "undefined" && "requestIdleCallback" in window
+        ? window.requestIdleCallback
+        : (cb: () => void) => window.setTimeout(cb, 2500);
+    const cancel =
+      typeof window !== "undefined" && "cancelIdleCallback" in window
+        ? window.cancelIdleCallback
+        : (id: number) => window.clearTimeout(id);
+    const id = idle(() => setLoadSecond(true));
+    return () => cancel(typeof id === "number" ? id : 0);
+  }, []);
 
   const goTo = useCallback(
     (index: number) => {
@@ -89,10 +105,12 @@ const VideoHero: React.FC = () => {
         >
           <video
             ref={(el) => { videoRefs.current[i] = el!; }}
-            src={v.src}
+            src={i === 0 || loadSecond ? v.src : undefined}
+            preload={i === 0 ? "auto" : "none"}
             muted
             playsInline
             loop={false}
+            disablePictureInPicture
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

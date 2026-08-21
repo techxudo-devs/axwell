@@ -23,7 +23,7 @@ export default function Map2() {
   };
 
   return (
-    <div className="w-full bg-[#020109] text-neutral-100 font-sans p-2 sm:p-4 md:p-6 flex flex-col items-center select-none relative min-h-screen">
+    <div className="w-full bg-[#020109] text-neutral-100 font-sans p-2 sm:p-4 md:p-6 flex flex-col items-center select-none relative md:min-h-screen pb-10">
       {/* Header */}
       <div className="w-full max-w-[1280px] text-center mb-3 sm:mb-5">
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium text-[#0FB6AE] uppercase tracking-wider">
