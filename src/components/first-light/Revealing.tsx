@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import axwellHeadliner from "@/assets/axwell9.svg";
+import axwellHeadliner from "@/assets/axwell11.svg";
 
 const Revealing = () => {
   return (
