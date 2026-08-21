@@ -50,7 +50,7 @@ const policies = [
     title: "After You Buy",
     body: [
       "A confirmation email with your QR e-ticket, venue map link, your tier's gate time and a what-to-bring guide is sent immediately after purchase.",
-      "Add info@opproductions.pk to your contacts so it doesn't land in spam.",
+      "Add hello@opproductions.com to your contacts so it doesn't land in spam.",
     ],
   },
   {
@@ -64,7 +64,7 @@ const policies = [
     title: "Media & Accessibility",
     body: [
       "By attending, you consent to being filmed or photographed for OP Productions and First Light promotional use.",
-      "For accessibility assistance, contact info@opproductions.pk in advance so we can support your visit.",
+      "For accessibility assistance, contact hello@opproductions.com in advance so we can support your visit.",
     ],
   },
 ];
@@ -127,7 +127,7 @@ const TicketPolicies = () => {
         {/* Heading — same style as Faqs */}
         <div className="w-full flex justify-center select-none pointer-events-none mb-14">
           <h2
-            className={`font-just text-[50px] md:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
+            className={`font-just text-[40px] md:text-[50px] lg:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
           >
             Policies
           </h2>

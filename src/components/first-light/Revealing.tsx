@@ -5,7 +5,7 @@ import { motion, AnimatePresence, useSpring, useMotionValue } from "framer-motio
 import Image from "next/image";
 import EventCountdown from "./EventCountdown";
 import shadowAx from "@/assets/ax4.png";
-import axwellRevealed from "@/assets/axwell3.png";
+import axwellRevealed from "@/assets/axwell6.png";
 
 const Revealing = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -112,17 +112,17 @@ const Revealing = () => {
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               className="flex flex-col items-center text-center py-10"
             >
-              <h2 className={`font-just text-[50px] md:text-[70px] md:text-[75px] text-[#0FB6AE] leading-none mb-4 drop-shadow-[0_0_30px_rgba(15,182,174,0.6)]`}>
-                It's
+              <h2 className={`font-just text-[40px] md:text-[50px] md:text-[60px] text-[#0FB6AE] leading-none mb-4 drop-shadow-[0_0_30px_rgba(15,182,174,0.6)]`}>
+              AXWELL
               </h2>
 
-              <div className="relative w-[400px] h-[400px] md:w-[500px] md:h-[500px] flex items-center justify-center my-8">
+              <div className="relative w-[400px] h-[400px] md:w-[650px] md:h-[650px] flex items-center justify-center my-8 -mt-26 md:-mt-40 -mb-10">
                 <Image
                   src={axwellRevealed}
                   alt="Axwell"
                   fill
                   priority
-                  className="object-contain drop-shadow-[0_0_60px_rgba(15,182,174,0.1)]"
+                  className="object-cover"
                 />
               </div>
             </motion.div>

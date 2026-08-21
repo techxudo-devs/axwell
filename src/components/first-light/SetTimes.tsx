@@ -5,7 +5,7 @@ import { Sun, Music, Mic2, Star } from "lucide-react";
 
 const setTimes = [
   { time: "16:00", label: "Gates Open", icon: <Sun size={14} />, type: "gate" as const },
-  { time: "19:00", end: "19:45", label: "Mahnoor", icon: <Music size={14} />, type: "set" as const },
+  { time: "19:00", end: "19:45", label: "Hazey", icon: <Music size={14} />, type: "set" as const },
   { time: "20:20", end: "21:05", label: "Shotbox", icon: <Music size={14} />, type: "set" as const },
   { time: "21:25", end: "22:15", label: "Bilal Brohi", icon: <Mic2 size={14} />, type: "support" as const },
   { time: "22:45", end: "00:00", label: "AXWELL", icon: <Star size={14} />, type: "headliner" as const },
@@ -28,7 +28,7 @@ const SetTimes = () => {
             </h2>
           </div>
           <p className="font-just text-[10px] md:text-xs text-white/25 tracking-wide uppercase">
-            Gates 16:00 · Curfew 00:00
+            Gates Open 16:00 · Event End 00:00
           </p>
         </div>
 

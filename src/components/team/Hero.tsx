@@ -9,6 +9,7 @@ interface CrewMember {
   name: string;
   role: string;
   img: string;
+  bio: string;
 }
 
 const Hero: React.FC = () => {
@@ -20,54 +21,63 @@ const Hero: React.FC = () => {
       name: "Omer H. Paracha",
       role: "CEO",
       img: "/images/image8.jpeg",
+      bio: "Omer H. Paracha is the visionary founder and executive producer driving OP Productions. With years of global media experience, he aligns planning, creative execution, and international distribution to guide groundbreaking cinematic campaigns from concept to delivery.",
     },
     {
       id: "02",
       name: "Muhammad Zouhaib",
       role: "MD",
       img: "/images/image3.jpeg",
+      bio: "Muhammad Zouhaib leads day-to-day operations as Managing Director, translating vision into execution. He oversees production planning, partnerships, and internal workflows, ensuring every OP Productions project runs efficiently while upholding the studio's standards for quality and reliability.",
     },
     {
       id: "03",
       name: "Omar Hassan",
       role: "Executive Director",
       img: "",
+      bio: "Omar Hassan provides executive direction across OP Productions' slate, shaping strategy and creative oversight. He builds key relationships, guides project development, and ensures every production aligns with the company's long-term vision and international ambitions.",
     },
     {
       id: "04",
       name: "Omar Ovais Akram",
       role: "Executive Director",
       img: "/images/image4.jpeg",
+      bio: "Omar Ovais Akram drives executive planning and creative coordination at OP Productions. Working across departments, he streamlines decision-making, supports high-level partnerships, and keeps productions on course from early development through final delivery.",
     },
     {
       id: "05",
       name: "Saif Aly Khan",
       role: "Head Of Legal",
       img: "/images/image1.jpeg",
+      bio: "Saif Aly Khan heads legal affairs at OP Productions, safeguarding contracts, intellectual property, and compliance. His expertise protects the studio's interests across film, events, and media ventures, ensuring every deal is secure and transparent.",
     },
     {
       id: "06",
       name: "Nadeem Kazmi",
       role: "Senior Manager",
       img: "/images/image2.jpeg",
+      bio: "Nadeem Kazmi manages core operations as Senior Manager, coordinating teams, vendors, and schedules. His hands-on approach keeps complex productions organized and on budget, delivering smooth execution across films, live events, and commercial work.",
     },
     {
       id: "07",
       name: "Khairaza Khan",
       role: "Senior Manager",
       img: "/images/image7.jpeg",
+      bio: "Khairaza Khan oversees production logistics as Senior Manager, handling planning, resources, and on-ground coordination. His attention to detail ensures every OP Productions event and shoot runs seamlessly from first call to final wrap.",
     },
     {
       id: "08",
       name: "Shahista Zohaib",
       role: "Manager",
       img: "/images/image5.jpeg",
+      bio: "Shahista Zohaib manages daily operations and team coordination at OP Productions. She supports planning, communication, and administration across projects, keeping workflows organized and ensuring creative teams have everything needed to deliver their best work.",
     },
     {
       id: "09",
       name: "Solomon Yaqub",
       role: "Associate Manager",
       img: "/images/image6.jpeg",
+      bio: "Solomon Yaqub assists in managing production activities and event operations at OP Productions. From scheduling to on-site support, he brings energy and reliability to every task, helping the crew deliver polished results consistently.",
     },
   ];
 
@@ -232,9 +242,7 @@ const Hero: React.FC = () => {
                     About
                   </span>
                   <p className="font-plus text-xs md:text-sm text-slate-300 leading-relaxed font-light">
-                    {selectedMember.id === "01"
-                      ? "Omer H. Paracha is the visionary founder and executive producer driving OP Productions. With years of global media experience, he aligns planning, creative execution, and international distribution to guide groundbreaking cinematic campaigns from concept to delivery."
-                      : `A vital, specialized pillar of the OP Productions studio crew. Dedicated to high-end execution, seamless logistics, and delivering award-winning results across feature films, documentaries, live events, and commercial design.`}
+                    {selectedMember.bio}
                   </p>
                 </div>
               </div>

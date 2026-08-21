@@ -31,10 +31,10 @@ const Contact: React.FC = () => {
 
           {/* Large Interactive Email Link */}
           <a
-            href="mailto:info@opproductions.com"
+            href="mailto:hello@opproductions.com"
             className="group inline-flex items-center space-x-3 text-xl md:text-2xl font-black font-plus text-white hover:text-cyan-300 transition-colors duration-300 ease-out border-b border-white/10 pb-3 relative"
           >
-            <span>info@opproductions.com</span>
+            <span>hello@opproductions.com</span>
             <ArrowUpRight className="w-6 md:w-8 h-6 md:h-8 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300 text-cyan-400" />
           </a>
         </div>
@@ -89,7 +89,7 @@ const Contact: React.FC = () => {
               Elsewhere
             </h5>
 
-            <div className="grid grid-cols-3 gap-4 items-center">
+            <div className="grid grid-cols-3 gap-4 items-center md:flex md:items-center md:gap-x-6">
               {/* Instagram */}
               <a
                 href="https://instagram.com/opproductionsofficial"
@@ -101,7 +101,8 @@ const Contact: React.FC = () => {
                   size={16}
                   className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-200"
                 />
-                <span>Instagram</span>
+                <span className="md:hidden">Instagram</span>
+                <span className="hidden md:inline">Insta</span>
                 <ArrowUpRight
                   size={14}
                   className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
@@ -119,7 +120,8 @@ const Contact: React.FC = () => {
                   size={16}
                   className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-200"
                 />
-                <span>YouTube</span>
+                <span className="md:hidden">YouTube</span>
+                <span className="hidden md:inline">YT</span>
                 <ArrowUpRight
                   size={14}
                   className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"
@@ -155,7 +157,8 @@ const Contact: React.FC = () => {
                   size={14}
                   className="text-slate-400 group-hover:text-cyan-400 transition-colors duration-200"
                 />
-                <span>Facebook</span>
+                <span className="md:hidden">Facebook</span>
+                <span className="hidden md:inline">FB</span>
                 <ArrowUpRight
                   size={14}
                   className="opacity-40 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-200"

@@ -76,7 +76,7 @@ const Venue = () => {
           Where it all happens
         </span>
         <h2
-          className={`font-just text-[52px] md:text-[64px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_18px_rgba(15,182,174,0.35)]`}
+          className={`font-just text-[40px] md:text-[50px] lg:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_18px_rgba(15,182,174,0.35)]`}
         >
           The Venue
         </h2>

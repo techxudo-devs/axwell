@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Play, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const videos = [
@@ -161,8 +161,8 @@ const VideoHero: React.FC = () => {
                   rel="noopener noreferrer"
                   className="cursor-pointer bg-cyan-600/30 hover:bg-cyan-700/30 active:scale-95 text-white flex items-center space-x-2 px-5 sm:px-6 py-2 sm:py-[10px] rounded-full text-[10px] md:text-xs font-medium font-plus tracking-wide transition duration-150 ease-in-out shadow-md shadow-red-900/10"
                 >
-                  <Play size={12} className="sm:size-[14px] fill-current text-white" />
-                  <span>WATCH</span>
+                  <ArrowUpRight size={12} className="sm:size-[14px] text-white" />
+                  <span>LEARN MORE</span>
                 </a>
               </div>
             </motion.div>

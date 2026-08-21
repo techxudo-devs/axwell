@@ -16,7 +16,7 @@ const MARQUEE_ITEMS = [
   "FIRST LIGHT",
   "Axwell LIVE",
   "22 AUG 2026",
-  "DHA Golf Club(MOIN KHAN ACADEMY)",
+  "DHA Golf Club (MOIN KHAN ACADEMY)",
   "KARACHI",
   "GATES FROM 4:00 PM",
 ];

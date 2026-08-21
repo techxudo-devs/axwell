@@ -163,7 +163,7 @@ const Faqs = () => {
 
       <div className="w-full max-w-[1100px] z-10">
         <h2
-          className={`font-just mb-14 text-[50px] md:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] select-none`}
+          className={`font-just mb-14 text-[40px] md:text-[50px] lg:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] select-none`}
         >
           Doors Open
         </h2>
@@ -179,7 +179,7 @@ const Faqs = () => {
       <div id="faqs" className="w-full scroll-mt-28">
         <div className="w-full flex justify-center select-none pointer-events-none mt-16 mb-14">
           <h2
-            className={`font-just text-[50px] md:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
+            className={`font-just text-[40px] md:text-[50px] lg:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
           >
             Faqs
           </h2>

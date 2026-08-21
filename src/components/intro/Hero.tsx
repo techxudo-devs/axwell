@@ -2,6 +2,16 @@
 
 import Link from 'next/link'
 import { Sparkles, Clapperboard, MessageSquare, UsersRound } from 'lucide-react'
+import { FaInstagram, FaYoutube, FaLinkedinIn, FaFacebookF, FaTiktok, FaXTwitter } from 'react-icons/fa6'
+
+const socialLinks = [
+  { icon: FaInstagram, href: 'https://instagram.com/opproductionsofficial', label: 'Instagram' },
+  { icon: FaYoutube, href: 'https://youtube.com/@opproductionsofficial1', label: 'YouTube' },
+  { icon: FaLinkedinIn, href: 'https://linkedin.com/company/99193478', label: 'LinkedIn' },
+  { icon: FaFacebookF, href: 'https://facebook.com/share/1A59o5yTYr', label: 'Facebook' },
+  { icon: FaTiktok, href: 'https://tiktok.com/@opproductionsofficial', label: 'TikTok' },
+  { icon: FaXTwitter, href: 'https://x.com/OPPOfficial', label: 'X' },
+]
 
 const Hero = () => {
   return (
@@ -94,10 +104,38 @@ const Hero = () => {
         </Link>
       </div>
 
-      <footer className="w-full bg-[#12040b]/40 border-t border-[#0FB6AE]/10 py-3 flex items-center justify-center select-none z-40">
-        <span className="text-[9px] md:text-[10px] font-medium font-plus tracking-widest text-white/50 uppercase">
-          Developed by <a href="https://prmedia.io/" target='_blank'>PR Media LLC</a>
+      <footer className="w-full bg-[#12040b]/40 border-t border-[#0FB6AE]/10 py-3 px-4 md:px-6 grid md:grid-cols-3 items-center justify-center select-none z-40 gap-3">
+        <div className="flex items-center gap-3 md:gap-4 justify-center md:justify-self-start">
+          {socialLinks.map(({ icon: Icon, href, label }) => (
+            <a
+              key={label}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={label}
+              className="text-white/50 hover:text-[#0FB6AE] transition-colors duration-200"
+            >
+              <Icon size={16} />
+            </a>
+          ))}
+        </div>
+        <span className="justify-self-center text-[9px] md:text-[10px] font-medium font-plus tracking-widest text-white/50 uppercase whitespace-nowrap md:pt-0 pt-1">
+          Developed by{' '}
+          <a
+            href="https://prmedia.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors duration-200"
+          >
+            PR Media LLC
+          </a>
         </span>
+        <a
+          href="mailto:hello@opproductions.com"
+          className="md:justify-self-end text-[9px] md:text-[10px] font-medium font-plus tracking-widest uppercase whitespace-nowrap text-white/50 hover:text-white transition-colors duration-200"
+        >
+          hello@opproductions.com
+        </a>
       </footer>
 
     </section>

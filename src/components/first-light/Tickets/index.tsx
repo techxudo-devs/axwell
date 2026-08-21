@@ -51,13 +51,13 @@ const Tickets = () => {
 
       <div className="relative z-10 w-full max-w-[920px] flex flex-col items-center">
         <h2
-          className={`font-just text-[50px] leading-none md:text-[56px] text-[#0FB6AE] mb-14 text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
+          className={`font-just text-[40px] md:text-[50px] leading-none lg:text-[56px] text-[#0FB6AE] mb-14 text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
         >
           Choose your experience
         </h2>
 
         {/* High-End Premium Early Bird Banner */}
-        <div className="mb-10 w-full max-w-[850px] group relative">
+        {/* <div className="mb-10 w-full max-w-[850px] group relative">
           <div className="absolute -inset-[2px] bg-gradient-to-r from-[#18060F] via-[#0FB6AE] to-[#18060F] rounded-3xl blur-[8px] opacity-25 group-hover:opacity-50 transition-opacity duration-700 animate-pulse"></div>
 
           <div
@@ -101,7 +101,7 @@ const Tickets = () => {
               <div className="mt-2 h-0.5 w-12 bg-gradient-to-r from-transparent via-[#18060F] to-transparent"></div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col gap-y-6 w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 w-full">

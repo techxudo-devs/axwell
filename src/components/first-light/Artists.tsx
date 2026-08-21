@@ -233,7 +233,7 @@ const Artists = () => {
       className={`relative w-full flex flex-col items-center overflow-hidden pt-24 px-4 font-just bg-[#04040A] text-white`}
     >
       <h2
-        className={`font-just mb-14 text-[56px] leading-none text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] select-none`}
+        className={`font-just mb-14 text-[40px] md:text-[50px] lg:text-[56px] leading-none text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] select-none`}
       >
         Artists Lineup
       </h2>

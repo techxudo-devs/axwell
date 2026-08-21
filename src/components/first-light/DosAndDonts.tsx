@@ -7,7 +7,7 @@ import {
   ShieldCheck,
   CreditCard,
   Clock,
-  Headphones,
+  MailCheck,
   ShoppingCart,
   Users,
   GlassWater,
@@ -29,7 +29,7 @@ const dos = [
   { icon: ShieldCheck, text: "Follow all staff and security instructions at all times" },
   { icon: ShoppingCart, text: "Buy only from official channels — Ticketwala" },
   { icon: Users, text: "Buy for your group in one go & share each person's QR" },
-  { icon: Headphones, text: "Add info@opproductions.pk to avoid spam filters" },
+  { icon: MailCheck, text: "Check your confirmation email for your gate number & entry time" },
 ];
 
 const donts = [
@@ -104,7 +104,7 @@ const DosAndDonts = () => {
           data-reveal-item
           className="venue-reveal-item w-full flex flex-col items-center select-none pointer-events-none mb-16"
         >
-          <h2 className="font-just text-[50px] md:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]">
+          <h2 className="font-just text-[40px] md:text-[50px] lg:text-[56px] text-[#0FB6AE] text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] leading-none">
             Event Guide
           </h2>
           <p className="mt-3 text-[13px] md:text-[14px] text-white/30 tracking-wide text-center max-w-md">
