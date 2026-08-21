@@ -431,7 +431,7 @@ export default function Map2() {
             {/* PINK GOLD (Left Box) */}
             <g
               className="hover:opacity-90 transition-opacity cursor-pointer"
-              onPointerEnter={(e) => handleMouseEnter(e, "PINK GOLD 51X35")}
+              onPointerEnter={(e) => handleMouseEnter(e, "PINK SECTION 51X35")}
               onMouseLeave={handleMouseLeave}
               onClick={() => openTicketDetails("gold-women")}
             >
@@ -462,7 +462,7 @@ export default function Map2() {
                 fontSize="10"
                 fontWeight="900"
               >
-                GOLD
+                SECTION
               </text>
             </g>
 

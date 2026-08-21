@@ -135,7 +135,7 @@ const ImpactStats = () => {
     <section
       ref={sectionRef}
       aria-label="Event impact statistics"
-      className={`relative w-full overflow-hidden bg-[#02010A] pt-24 font-just`}
+      className={`relative w-full overflow-hidden bg-[#02010A] pt-4 font-just`}
     >
       <div className="relative mx-auto w-full max-w-[1100px] px-4 sm:px-6">
         {/* Section label */}

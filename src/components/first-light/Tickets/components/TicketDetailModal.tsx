@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
-import { Clock, Mail, ArrowRight, ArrowDown, Check, Ticket as TicketIcon, X } from "lucide-react";
+import { Clock, Mail, ArrowRight, ArrowDown, Check, Ticket as TicketIcon, X, ShieldCheck } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { NOTCH_COLOR } from "../constants";
@@ -325,6 +325,14 @@ const TicketDetailModal = ({ ticket, onClose }: TicketDetailModalProps) => {
                 Max {ticket.maxPerID} per ID
               </p>
             </div>
+          </div>
+
+          {/* ID Check Notice */}
+          <div className="modal-stagger mt-3 flex items-center gap-2 rounded-lg border border-[#0FB6AE]/30 bg-[#0FB6AE]/5 px-3 py-2.5">
+            <ShieldCheck size={14} className="shrink-0 text-[#0FB6AE]" />
+            <p className="text-sm font-semibold text-white">
+              ID check is mandatory
+            </p>
           </div>
 
           {/* Decorative barcode strip */}

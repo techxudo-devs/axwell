@@ -15,7 +15,7 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
       case "gold":
         return "linear-gradient(110deg, #b8860b 0%, #d4af37 40%, #fbbf24 50%, #d4af37 70%, #b8860b 100%)";
       case "gold-women":
-        return "linear-gradient(110deg, #FFD700 0%, #FDB931 40%, #FFE600 50%, #FDB931 70%, #FFD700 100%)";
+        return "linear-gradient(110deg, #be123c 0%, #f43f5e 40%, #fb7185 50%, #f43f5e 70%, #be123c 100%)";
       case "vip":
         return "linear-gradient(110deg, #4B0082 0%, #2a003a 40%, #4B0082 50%, #2a003a 70%, #4B0082 100%)";
       case "platinum":
