@@ -21,7 +21,7 @@ import Image from "next/image";
 import brohiImg from "@/assets/brohi2.png";
 import hazey from "@/assets/hazey.png";
 import shotbox from "@/assets/shotbox.png";
-import axwell from "@/assets/ax4.png";
+import axwell from "@/assets/axwell9.svg";
 import ArtistDetailModal, {
   type Artist,
   type ArtistExtra,
@@ -98,7 +98,9 @@ const ArtistsData: Artist[] = [
     artist: "Axwell",
     role: "Headliner",
     imageUrl: axwell.src,
-    bio: `Axwell  — known the world over as Axwell — is one of the most influential figures in the history of electronic music. A founding member of Swedish House Mafia alongside Steve Angello and Sebastian Ingrosso, he helped define an era of stadium-scale house music that reached billions of listeners across every continent.
+    bio: `Axwell (Axel Christofer Hedfors) is a Swedish DJ and producer and a founding member of Swedish House Mafia, among the most influential acts in modern electronic music.
+    
+    Axwell  — known the world over as Axwell — is one of the most influential figures in the history of electronic music. A founding member of Swedish House Mafia alongside Steve Angello and Sebastian Ingrosso, he helped define an era of stadium-scale house music that reached billions of listeners across every continent.
 
 His landmark tracks — 'In My Arms', 'I Found U', 'Feel the Vibe', and the Swedish House Mafia anthem 'Don't You Worry Child' — are among the most recognised dance records ever recorded, accumulating over 5 billion combined streams to date.
 
