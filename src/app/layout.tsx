@@ -7,6 +7,9 @@ import WhatsAppButton from "@/components/common/WhatsAppButton";
 export const metadata: Metadata = {
   title: "OP Productions",
   description: "OP Productions — Film, Music & Events",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
