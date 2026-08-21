@@ -26,7 +26,7 @@ const venueDetails = [
   {
     icon: CalendarDays,
     label: "Event Date",
-    value: "Fri 24 July 2026",
+    value: "September 2026",
     accent: "pink" as const,
   },
   {

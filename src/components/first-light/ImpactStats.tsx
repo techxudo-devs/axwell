@@ -13,7 +13,7 @@ const STATS = [
     end: 24,
     suffix: "",
     label: "Limited Seats",
-    detail: "July 2026",
+    detail: "September 2026",
     accent: "#0FB6AE",
     border: "rgba(15,182,174,0.4)",
     bg: "rgba(15,182,174,0.1)",
