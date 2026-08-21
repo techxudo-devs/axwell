@@ -1,7 +1,19 @@
 "use client";
 
 import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { Mail, Phone, HelpCircle, MessageSquare, Send, UserRound } from 'lucide-react'
+
+const EMAILJS_SERVICE_ID = 'service_gdipzyr'
+const EMAILJS_TEMPLATE_ID = 'template_o365w1f'
+const EMAILJS_PUBLIC_KEY = 'YCQqjBVRZovx6t5Q9'
+
+const ENQUIRY_LABELS: Record<string, string> = {
+  production: 'Film Production',
+  creative: 'Creative Visual Campaign',
+  event: 'Event Management',
+  other: 'General Inquiry',
+}
 
 const ContactForm: React.FC = () => {
   const [name, setName] = useState<string>("")
@@ -12,15 +24,30 @@ const ContactForm: React.FC = () => {
 
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false)
+  const [isError, setIsError] = useState<boolean>(false)
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
-    setTimeout(() => {
-      setIsSubmitting(false)
+    setIsError(false)
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name,
+          from_email: email,
+          reply_to: email,
+          phone: phone,
+          enquiry: ENQUIRY_LABELS[enquiry] || enquiry,
+          message: message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      )
+
       setIsSubmitted(true)
-      
+
       setTimeout(() => {
         setName("")
         setEmail("")
@@ -29,7 +56,12 @@ const ContactForm: React.FC = () => {
         setMessage("")
         setIsSubmitted(false)
       }, 3000)
-    }, 1500)
+    } catch (error) {
+      console.error('Failed to send enquiry:', error)
+      setIsError(true)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -132,6 +164,13 @@ const ContactForm: React.FC = () => {
           className="bg-transparent text-white placeholder-slate-500 text-sm w-full ml-3 focus:outline-none font-plus resize-none"
         />
       </div>
+
+      {/* Error Message */}
+      {isError && (
+        <p className="text-red-400 text-xs font-plus text-center -mt-2">
+          Something went wrong while sending your enquiry. Please try again.
+        </p>
+      )}
 
       {/* Premium Submit Button */}
       <button 

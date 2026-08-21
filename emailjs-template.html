@@ -1,0 +1,210 @@
+<!--
+  ============================================================
+  EMAILJS TEMPLATE — OP PRODUCTIONS CONTACT FORM
+  ============================================================
+  Paste this entire HTML into your EmailJS template editor
+  (Template Id: template_o365w1f) under the "Content" tab.
+
+  Suggested Subject line:
+  New Enquiry from {{from_name}} — OP Productions
+
+  Variables used (must match template params):
+    {{from_name}}   → Your Name
+    {{from_email}}  → Email Address
+    {{phone}}       → Phone Number
+    {{enquiry}}     → Enquiry Type (Film Production, etc.)
+    {{message}}     → Your Message
+  ============================================================
+-->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>New Enquiry — OP Productions</title>
+</head>
+<body style="margin:0; padding:0; background-color:#050508; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;">
+
+  <!-- Preheader (hidden preview text) -->
+  <div style="display:none; max-height:0; overflow:hidden; mso-hide:all;">
+    New {{enquiry}} enquiry from {{from_name}} — respond via {{from_email}}
+  </div>
+
+  <!-- Outer wrapper -->
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#050508;">
+    <tr>
+      <td align="center" style="padding:32px 12px;">
+
+        <!-- Main container -->
+        <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" style="max-width:600px; width:100%; background-color:#0A0A10; border-radius:16px; overflow:hidden; border:1px solid #1c1c26;">
+
+          <!-- ===== HEADER ===== -->
+          <tr>
+            <td style="background-color:#0A0A10; padding:36px 40px 28px 40px; text-align:center; background-image:linear-gradient(135deg, rgba(15,182,174,0.12) 0%, rgba(73,24,51,0.25) 100%);">
+              <div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; font-weight:700; letter-spacing:3px; color:#0FB6AE; text-transform:uppercase; margin-bottom:14px;">OP Productions</div>
+              <h1 style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:30px; font-weight:900; color:#ffffff; letter-spacing:-0.5px; margin:0; text-transform:uppercase;">Let&rsquo;s <span style="color:#0FB6AE;">Talk</span></h1>
+              <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:13px; color:#b9a6c9; font-weight:300; margin:10px 0 0 0; letter-spacing:0.5px;">Make something unforgettable.</p>
+            </td>
+          </tr>
+
+          <!-- Teal accent divider -->
+          <tr>
+            <td height="3" style="background-color:#0FB6AE; font-size:0; line-height:3;">&nbsp;</td>
+          </tr>
+
+          <!-- ===== BODY ===== -->
+          <tr>
+            <td style="padding:36px 40px 8px 40px; background-color:#0A0A10;">
+              <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; color:#e2e8f0; line-height:1.6; margin:0 0 6px 0;">
+                You have received a new enquiry through the website contact form.
+              </p>
+              <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:13px; color:#94a3b8; line-height:1.6; margin:0;">
+                Details are below &mdash; you can reply directly to this email.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Enquiry badge -->
+          <tr>
+            <td style="padding:20px 40px 4px 40px; background-color:#0A0A10;">
+              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                  <td style="background-color:rgba(15,182,174,0.08); border:1px solid #0FB6AE; border-radius:100px; padding:7px 18px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase;">
+                    {{enquiry}}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- ===== FIELDS CARD ===== -->
+          <tr>
+            <td style="padding:20px 40px 0 40px; background-color:#0A0A10;">
+
+              <!-- Card -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#101018; border:1px solid #232330; border-radius:12px;">
+
+                <!-- Name -->
+                <tr>
+                  <td style="padding:20px 24px 6px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase;">
+                    Your Name
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 24px 18px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; font-weight:600; color:#ffffff; line-height:1.5;">
+                    {{from_name}}
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr><td colspan="2" style="border-top:1px solid #1c1c26; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+                <!-- Email -->
+                <tr>
+                  <td style="padding:18px 24px 6px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase;">
+                    Email Address
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 24px 18px 24px;">
+                    <a href="mailto:{{from_email}}" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none; line-height:1.5;">{{from_email}}</a>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr><td colspan="2" style="border-top:1px solid #1c1c26; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+                <!-- Phone -->
+                <tr>
+                  <td style="padding:18px 24px 6px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase;">
+                    Phone Number
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 24px 18px 24px;">
+                    <a href="tel:{{phone}}" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; font-weight:600; color:#ffffff; text-decoration:none; line-height:1.5;">{{phone}}</a>
+                  </td>
+                </tr>
+
+                <!-- Divider -->
+                <tr><td colspan="2" style="border-top:1px solid #1c1c26; font-size:0; line-height:0;">&nbsp;</td></tr>
+
+                <!-- Message -->
+                <tr>
+                  <td style="padding:18px 24px 6px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase;">
+                    Message
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding:0 24px 22px 24px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:14px; font-weight:400; color:#cbd5e1; line-height:1.8;">
+                    {{message}}
+                  </td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- CTA hint -->
+          <tr>
+            <td style="padding:24px 40px 8px 40px; background-color:#0A0A10;">
+              <p style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:12px; color:#94a3b8; line-height:1.7; margin:0;">
+                Hit <strong style="color:#ffffff;">Reply</strong> to respond to <span style="color:#0FB6AE;">{{from_name}}</span> directly at {{from_email}}, or call on the number above.
+              </p>
+            </td>
+          </tr>
+
+          <!-- ===== FOOTER ===== -->
+          <tr>
+            <td style="padding:28px 40px 0 40px; background-color:#0A0A10;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="border-top:1px solid #1c1c26;">
+                <!-- Offices -->
+                <tr>
+                  <td style="padding-top:24px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">
+                      <tr>
+                        <td width="50%" style="vertical-align:top; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                          <div style="font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase; margin-bottom:6px;">Karachi</div>
+                          <div style="font-size:11px; color:#94a3b8; line-height:1.7;">10-C Kh-e-Shahbaz, D.H.A Phase 6<br />Karachi, Sindh, Pakistan<br /><a href="tel:+923008204263" style="color:#b9a6c9; text-decoration:none;">+92 300 8204263</a></div>
+                        </td>
+                        <td width="50%" style="vertical-align:top; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                          <div style="font-size:10px; font-weight:700; letter-spacing:2px; color:#0FB6AE; text-transform:uppercase; margin-bottom:6px;">Los Angeles</div>
+                          <div style="font-size:11px; color:#94a3b8; line-height:1.7;">112 W 9th St, Ste 812<br />Los Angeles, CA, USA<br /><a href="tel:+15613606910" style="color:#b9a6c9; text-decoration:none;">+1 561 360 6910</a></div>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+
+                <!-- Socials -->
+                <tr>
+                  <td style="padding-top:20px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:11px; line-height:2;">
+                    <span style="color:#64748b;">Follow us:</span>
+                    <a href="https://instagram.com/opproductionsofficial" style="color:#94a3b8; text-decoration:none; margin-left:6px;">Instagram</a> <span style="color:#2d2d3a;">|</span>
+                    <a href="https://youtube.com/@opproductionsofficial1" style="color:#94a3b8; text-decoration:none; margin-left:6px;">YouTube</a> <span style="color:#2d2d3a;">|</span>
+                    <a href="https://linkedin.com/company/99193478" style="color:#94a3b8; text-decoration:none; margin-left:6px;">LinkedIn</a> <span style="color:#2d2d3a;">|</span>
+                    <a href="https://facebook.com/share/1A59o5yTYr" style="color:#94a3b8; text-decoration:none; margin-left:6px;">Facebook</a> <span style="color:#2d2d3a;">|</span>
+                    <a href="https://tiktok.com/@opproductionsofficial" style="color:#94a3b8; text-decoration:none; margin-left:6px;">TikTok</a> <span style="color:#2d2d3a;">|</span>
+                    <a href="https://x.com/OPPOfficial" style="color:#94a3b8; text-decoration:none; margin-left:6px;">X</a>
+                  </td>
+                </tr>
+
+                <!-- Copyright bar -->
+                <tr>
+                  <td style="padding:20px 0 28px 0; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:10px; color:#475569; letter-spacing:1px; text-transform:uppercase;">
+                    &copy; OP Productions &mdash; hello@opproductions.com
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /Main container -->
+
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
