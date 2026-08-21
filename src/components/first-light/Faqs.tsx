@@ -39,7 +39,7 @@ const faqsData: FAQItem[] = [
     id: 6,
     category: 'FAQ',
     question: 'How many tickets can I buy?',
-    answer: "Per-ID limits keep entry fair and secure — Bronze up to 10, Silver up to 6, Gold up to 8, Gold Women's up to 5, VIP up to 5, PLATINUM up to 4 per transaction. Each ticket carries a unique single-use QR code tied to one entry, so buy for your group in one go and share each person's QR before the gates.",
+    answer: "Per-ID limits keep entry fair and secure — Bronze up to 10, Silver up to 6, Gold up to 8, Pink Section up to 5, VIP up to 5, PLATINUM up to 4 per transaction. Each ticket carries a unique single-use QR code tied to one entry, so buy for your group in one go and share each person's QR before the gates.",
   },
   {
     id: 7,
