@@ -21,7 +21,7 @@ const SetTimes = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-10 md:mb-14">
           <div>
             <span className="font-just text-[10px] md:text-xs uppercase tracking-wider text-[#0FB6AE]/50 block mb-2">
-              4 Sep 2026 · DHA Golf Club, Karachi
+              19 Sep 2026 · DHA Golf Club, Karachi
             </span>
             <h2 className="font-just text-3xl sm:text-4xl md:text-5xl text-[#0FB6AE] leading-none tracking-tight">
               Set Times
