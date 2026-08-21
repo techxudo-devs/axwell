@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useRef, useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, Play } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const videos = [
@@ -79,10 +79,6 @@ const VideoHero: React.FC = () => {
     goTo((current + 1) % videos.length);
   }, [current, goTo]);
 
-  const prev = useCallback(() => {
-    goTo((current - 1 + videos.length) % videos.length);
-  }, [current, goTo]);
-
   useEffect(() => {
     const video = videoRefs.current[current];
     if (!video) return;
@@ -90,6 +86,8 @@ const VideoHero: React.FC = () => {
     video.addEventListener("ended", handleEnded);
     return () => video.removeEventListener("ended", handleEnded);
   }, [current, next]);
+
+  const [needsGesture, setNeedsGesture] = useState(false);
 
   useEffect(() => {
     const first = videoRefs.current[0];
@@ -102,16 +100,44 @@ const VideoHero: React.FC = () => {
 
     tryPlay();
 
-    // iOS (especially Low Power Mode) silently blocks autoplay —
-    // retry on the first user gesture until playback actually starts.
+    // Mount-time play() can fire too early on iOS — retry once media is ready
+    first.addEventListener("canplay", tryPlay);
+    first.addEventListener("canplaythrough", tryPlay);
+
+    // iOS pauses videos when returning from background — resume
+    const onVisible = () => {
+      if (document.visibilityState === "visible") tryPlay();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+
+    // Keep retrying briefly; if still blocked (e.g. Low Power Mode),
+    // surface an explicit play button as a guaranteed fallback.
+    let attempts = 0;
+    const interval = window.setInterval(() => {
+      attempts += 1;
+      if (!first.paused || attempts > 10) {
+        window.clearInterval(interval);
+        if (first.paused) setNeedsGesture(true);
+        return;
+      }
+      tryPlay();
+    }, 1000);
+
+    // Retry on the first user gesture until playback actually starts
     const gestures: (keyof WindowEventMap)[] = ["touchstart", "touchend", "click"];
     gestures.forEach((g) => window.addEventListener(g, tryPlay, { passive: true }));
     const onPlaying = () => {
+      setNeedsGesture(false);
+      window.clearInterval(interval);
       gestures.forEach((g) => window.removeEventListener(g, tryPlay));
     };
-    first.addEventListener("playing", onPlaying, { once: true });
+    first.addEventListener("playing", onPlaying);
 
     return () => {
+      first.removeEventListener("canplay", tryPlay);
+      first.removeEventListener("canplaythrough", tryPlay);
+      document.removeEventListener("visibilitychange", onVisible);
+      window.clearInterval(interval);
       gestures.forEach((g) => window.removeEventListener(g, tryPlay));
       first.removeEventListener("playing", onPlaying);
     };
@@ -152,6 +178,23 @@ const VideoHero: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-transparent z-[1] pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-black/25 z-[1] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-full h-[500px] bg-gradient-to-t from-black via-black/90 to-transparent z-[1] pointer-events-none" />
+
+      {/* Play button fallback — shown only if the browser blocked autoplay */}
+      {needsGesture && (
+        <button
+          onClick={() => {
+            const first = videoRefs.current[0];
+            if (first) first.play().catch(() => {});
+            setNeedsGesture(false);
+          }}
+          aria-label="Play video"
+          className="absolute inset-0 z-[35] flex items-center justify-center bg-black/30 cursor-pointer"
+        >
+          <span className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-white/40 bg-white/10 backdrop-blur-md text-white shadow-2xl transition-transform duration-200 active:scale-90">
+            <Play size={28} className="sm:size-9 fill-current" />
+          </span>
+        </button>
+      )}
 
       {/* Content overlay */}
       <div className="absolute inset-0 z-30 w-full flex flex-col justify-between h-full gap-8 lg:gap-0 pointer-events-none">
@@ -218,24 +261,6 @@ const VideoHero: React.FC = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-      </div>
-
-      {/* Navigation arrows */}
-      <div className="absolute inset-y-0 left-0 right-0 z-40 flex items-center justify-between px-3 sm:px-6 md:px-10 pointer-events-none">
-        <button
-          onClick={prev}
-          disabled={isTransitioning}
-          className="pointer-events-auto bg-cyan-500/10 hover:bg-white text-white hover:text-black p-2.5 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm active:scale-95 border border-white/10 disabled:opacity-30 cursor-pointer"
-        >
-          <ChevronLeft size={16} className="sm:size-5" />
-        </button>
-        <button
-          onClick={next}
-          disabled={isTransitioning}
-          className="pointer-events-auto bg-cyan-500/10 hover:bg-white text-white hover:text-black p-2.5 sm:p-4 rounded-full transition-all duration-300 backdrop-blur-sm active:scale-95 border border-white/10 disabled:opacity-30 cursor-pointer"
-        >
-          <ChevronRight size={16} className="sm:size-5" />
-        </button>
       </div>
 
       {/* Dots */}
