@@ -83,6 +83,19 @@ const faqsData: FAQItem[] = [
     question: 'Who is organizing this event?',
     answer: 'First Light is produced by OP Productions — an original OP Productions event. Tickets are issued and managed by Ticketwala on behalf of OP Productions.',
   },
+  {
+    id: 9,
+    category: 'FAQ',
+    question: 'What Time and date do early bird tickets closed?',
+    answer: 'Early Bird discounts will be valid for **48 hours after the tickets go live**. Once the 48-hour period ends, the Early Bird offer will close and regular ticket pricing will apply.'
+  },
+  {
+    id: 10,
+    category: 'FAQ',
+    question: 'What Time and date do normal ticket open?',
+    answer: 'Tickets will be announced on **22 August 2026 at 5:00 PM**. The Early Bird discount will remain valid for **48 hours**, meaning the discount will end on **24 August 2026 at 5:00 PM**. From **24 August 2026 at 5:00 PM onwards**, normal ticket pricing will apply.'
+
+  },
 ];
 
 interface ClockItem {
