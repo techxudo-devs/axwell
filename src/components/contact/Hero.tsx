@@ -28,13 +28,17 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
-        {/* 50/50 SPLIT GRID SYSTEM */}
+        {/* 50/50 SPLIT GRID SYSTEM — form first on mobile, details left on desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 w-full items-start">
           {/* Left Side: Agency Details */}
-          <Contact />
+          <div className="order-2 md:order-1">
+            <Contact />
+          </div>
 
           {/* Right Side: Form Inputs */}
-          <ContactForm />
+          <div className="order-1 md:order-2">
+            <ContactForm />
+          </div>
         </div>
 
       </div>
