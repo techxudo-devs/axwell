@@ -1,0 +1,118 @@
+================================================================================
+                    FIRST LIGHT - FAQ SECTION (COMPLETE)
+--------------------------------------------------------------------------------
+Source File : src/components/first-light/Faqs.tsx
+Total FAQs  : 10
+Event       : First Light by OP Productions (feat. Axwell)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+FAQ #1
+Question: What is the refund and postponement policy?
+--------------------------------------------------------------------------------
+Answer:
+In short: if OP Productions cancels or postpones, you're covered - a full
+refund, or your ticket automatically rolls to the new date. No refunds for
+change of mind or personal circumstances. Full terms in the Policies section
+below.
+
+
+--------------------------------------------------------------------------------
+FAQ #2
+Question: When do tickets go on sale?
+--------------------------------------------------------------------------------
+Answer:
+On-sale details are announced shortly. The safest way to secure a ticket is to
+join the First Light list - members on our email list get early access before
+the public on-sale and are notified the moment sales open. Prices, tiers and
+Early Bird availability go live with the official announcement.
+
+
+--------------------------------------------------------------------------------
+FAQ #3
+Question: How do I contact OP Productions?
+--------------------------------------------------------------------------------
+Answer:
+(Note: This FAQ does not display a text answer on the site. Instead, it shows
+an inline contact form where the visitor enters their email address, selects a
+service - Partnership / Sponsorship / Live Booking / Management Inquiry /
+Other - and submits it. A service inquiry email is then sent to OP Productions
+via EmailJS.)
+
+
+--------------------------------------------------------------------------------
+FAQ #4
+Question: Where is the Venue?
+--------------------------------------------------------------------------------
+Answer:
+First Light is an open-air event at DHA Golf Club (Moin Khan Academy), Zone B /
+Phase 8, Karachi. On-site parking and ride-hailing drop-off are available at
+Gate A. Full directions, your gate and a venue map arrive in your confirmation
+email. Strictly 18+.
+
+
+--------------------------------------------------------------------------------
+FAQ #5
+Question: Do I need Id at the gate?
+--------------------------------------------------------------------------------
+Answer:
+This is an 18+ event, so carry a valid government-issued ID (CNIC or passport).
+PLATINUM and VIP tickets are ID-matched - the name on your ticket must match
+your ID. Bronze entry is by QR scan only. Whatever your tier, have your QR
+e-ticket ready for scanning.
+
+
+--------------------------------------------------------------------------------
+FAQ #6
+Question: How many tickets can I buy?
+--------------------------------------------------------------------------------
+Answer:
+Per-ID limits keep entry fair and secure - Bronze up to 10, Silver up to 6,
+Gold up to 8, Gold Women's up to 5, VIP up to 5, PLATINUM up to 4 per
+transaction. Each ticket carries a unique single-use QR code tied to one entry,
+so buy for your group in one go and share each person's QR before the gates.
+
+
+--------------------------------------------------------------------------------
+FAQ #7
+Question: Who else is performing?
+--------------------------------------------------------------------------------
+Answer:
+Opening the night: Bilal Brohi, Hazey and Shotbox. Topping the bill - Axwell.
+The confirmed running order and set times drop with the full announcement.
+
+
+--------------------------------------------------------------------------------
+FAQ #8
+Question: Who is organizing this event?
+--------------------------------------------------------------------------------
+Answer:
+First Light is produced by OP Productions - an original OP Productions event.
+Tickets are issued and managed by Ticketwala on behalf of OP Productions.
+
+
+--------------------------------------------------------------------------------
+FAQ #9
+Question: What Time and date do early bird tickets closed?
+--------------------------------------------------------------------------------
+Answer:
+Early Bird discounts will be valid for 48 hours after the tickets go live.
+Once the 48-hour period ends, the Early Bird offer will close and regular
+ticket pricing will apply.
+
+
+--------------------------------------------------------------------------------
+FAQ #10
+Question: What Time and date do normal ticket open?
+--------------------------------------------------------------------------------
+Answer:
+Tickets will be announced on 22 August 2026 at 5:00 PM. The Early Bird discount
+will remain valid for 48 hours, meaning the discount will end on 24 August 2026
+at 5:00 PM. From 24 August 2026 at 5:00 PM onwards, normal ticket pricing will
+apply.
+
+
+================================================================================
+                              END OF FAQ LIST
+================================================================================
