@@ -11,6 +11,7 @@ export default function Map2() {
 
   // Hover Handler — shows floating pill above hovered element
   const handleMouseEnter = (e: React.PointerEvent, name: string) => {
+    if (e.pointerType !== "mouse") return;
     const target = e.currentTarget as HTMLElement;
     const rect = target.getBoundingClientRect();
     if (rect.width === 0 || rect.height === 0) return;
@@ -22,8 +23,22 @@ export default function Map2() {
     setHoveredPill(null);
   };
 
+  // Click Handler — opens ticket detail section for the given tier
+  const openTicketDetails = (ticketId: string) => {
+    setHoveredPill(null);
+    window.dispatchEvent(
+      new CustomEvent("open-ticket-registration", { detail: { ticketId } })
+    );
+    document
+      .getElementById("tickets")
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="w-full bg-[#020109] text-neutral-100 font-sans p-2 sm:p-4 md:p-6 flex flex-col items-center select-none relative min-h-screen">
+    <div
+      className="w-full bg-[#020109] text-neutral-100 font-sans p-2 sm:p-4 md:p-6 flex flex-col items-center select-none relative md:min-h-screen pb-10"
+      onClick={() => setHoveredPill(null)}
+    >
       {/* Header */}
       <div className="w-full max-w-[1280px] text-center mb-3 sm:mb-5">
         <h1 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-medium text-[#0FB6AE] uppercase tracking-wider">
@@ -321,11 +336,12 @@ export default function Map2() {
               strokeWidth="1.5"
             />
 
-            {/* ================= AAA SECTION ================= */}
+            {/* ================= PLATINUM SECTION ================= */}
             <g
               className="hover:opacity-90 transition-opacity cursor-pointer"
-              onPointerEnter={(e) => handleMouseEnter(e, "AAA 200 x 46")}
+              onPointerEnter={(e) => handleMouseEnter(e, "Platinum 200 x 46")}
               onMouseLeave={handleMouseLeave}
+              onClick={() => openTicketDetails("platinum")}
             >
               <rect
                 x="47"
@@ -345,10 +361,10 @@ export default function Map2() {
                 fontWeight="800"
                 letterSpacing="1.5"
               >
-                AAA
+                PLATINUM
               </text>
 
-              {/* AAA Entrances */}
+              {/* Platinum Entrances */}
               <text
                 x="125"
                 y="225"
@@ -357,7 +373,7 @@ export default function Map2() {
                 fontSize="11"
                 fontWeight="700"
               >
-                AAA Entrance
+                Platinum Entrance
               </text>
               <text
                 x="430"
@@ -367,7 +383,7 @@ export default function Map2() {
                 fontSize="11"
                 fontWeight="700"
               >
-                AAA Entrance
+                Platinum Entrance
               </text>
             </g>
 
@@ -376,6 +392,7 @@ export default function Map2() {
               className="hover:opacity-90 transition-opacity cursor-pointer"
               onPointerEnter={(e) => handleMouseEnter(e, "V.V.I.P. 400 x 25")}
               onMouseLeave={handleMouseLeave}
+              onClick={() => openTicketDetails("vvip")}
             >
               <rect
                 x="47"
@@ -453,6 +470,7 @@ export default function Map2() {
               className="hover:opacity-90 transition-opacity cursor-pointer"
               onPointerEnter={(e) => handleMouseEnter(e, "GOLD 400 x 35")}
               onMouseLeave={handleMouseLeave}
+              onClick={() => openTicketDetails("gold")}
             >
               <rect
                 x="117"
@@ -491,6 +509,7 @@ export default function Map2() {
               className="hover:opacity-90 transition-opacity cursor-pointer"
               onPointerEnter={(e) => handleMouseEnter(e, "Silver 400 x 65")}
               onMouseLeave={handleMouseLeave}
+              onClick={() => openTicketDetails("silver")}
             >
               <rect
                 x="47"
@@ -550,6 +569,7 @@ export default function Map2() {
               className="hover:opacity-90 transition-opacity cursor-pointer"
               onPointerEnter={(e) => handleMouseEnter(e, "Bronze 400 x 135")}
               onMouseLeave={handleMouseLeave}
+              onClick={() => openTicketDetails("bronze")}
             >
               <path
                 d="M 47 424 L 508 424 L 508 555 A 80 80 0 0 1 428 635 L 127 635 A 80 80 0 0 1 47 555 Z"
@@ -616,10 +636,10 @@ export default function Map2() {
             />
           </g>
 
-          {/* 3. GOLD AAA ENTRY */}
+          {/* 3. GOLD PLATINUM ENTRY */}
           <g
             className="hover:opacity-80 transition-opacity cursor-pointer"
-            onPointerEnter={(e) => handleMouseEnter(e, "Gold AAA Entry")}
+            onPointerEnter={(e) => handleMouseEnter(e, "Gold Platinum Entry")}
             onMouseLeave={handleMouseLeave}
           >
             {/* Entry Gate Rectangle */}
@@ -639,7 +659,7 @@ export default function Map2() {
               fontSize="16"
               fontWeight="700"
             >
-              Gold AAA
+              Gold Platinum
             </text>
             <text
               x="840"

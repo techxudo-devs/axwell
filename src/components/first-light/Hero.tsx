@@ -127,8 +127,6 @@ const Hero = () => {
             width={HERO_DESKTOP.width}
             height={HERO_DESKTOP.height}
             priority
-            quality={100}
-            unoptimized
             draggable={false}
             className="h-auto w-full"
             sizes="100vw"
@@ -143,8 +141,6 @@ const Hero = () => {
             width={HERO_MOBILE.width}
             height={HERO_MOBILE.height}
             priority
-            quality={100}
-            unoptimized
             draggable={false}
             className="h-full w-full"
             sizes="100vw"

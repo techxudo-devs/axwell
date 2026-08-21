@@ -25,7 +25,7 @@ const Navbar2 = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 w-full z-20 flex items-center justify-between px-4 sm:px-6 md:px-10 py-6 bg-transparent text-white select-none">
+    <nav className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-4 sm:px-6 md:px-10 py-6 bg-transparent text-white select-none">
       {/* Left Navigation Items */}
       <div className="flex-1 flex justify-end items-center space-x-8 md:space-x-8 text-[11px] md:text-xs font-medium tracking-wide text-zinc-400 font-plus mr-6 md:mr-10">
         {['HOME', 'ABOUT'].map((item) => (

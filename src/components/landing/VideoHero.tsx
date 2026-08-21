@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const videos = [
   {
     src: "/videos/echoboomers.mp4",
+    poster: "/videos/posters/echoboomers.jpg",
     title: "ECHO BOOMERS",
     tags: ["Movie", "Short - Feature"],
     year: "2020",
@@ -19,6 +20,7 @@ const videos = [
   },
   {
     src: "/videos/michelshort.mp4",
+    poster: "/videos/posters/michelshort.jpg",
     title: "KING OF POP",
     tags: ["Documentary", "Short"],
     year: "2026",
@@ -34,7 +36,23 @@ const videos = [
 const VideoHero: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  // Second video is heavy (~11MB): don't download it on initial page
+  // load — prefetch it in the background once the page has settled.
+  const [loadSecond, setLoadSecond] = useState(false);
   const videoRefs = useRef<HTMLVideoElement[]>([]);
+
+  useEffect(() => {
+    const idle =
+      typeof window !== "undefined" && "requestIdleCallback" in window
+        ? window.requestIdleCallback
+        : (cb: () => void) => window.setTimeout(cb, 2500);
+    const cancel =
+      typeof window !== "undefined" && "cancelIdleCallback" in window
+        ? window.cancelIdleCallback
+        : (id: number) => window.clearTimeout(id);
+    const id = idle(() => setLoadSecond(true));
+    return () => cancel(typeof id === "number" ? id : 0);
+  }, []);
 
   const goTo = useCallback(
     (index: number) => {
@@ -75,7 +93,28 @@ const VideoHero: React.FC = () => {
 
   useEffect(() => {
     const first = videoRefs.current[0];
-    if (first) first.play().catch(() => {});
+    if (!first) return;
+
+    const tryPlay = () => {
+      if (!first.paused) return;
+      first.play().catch(() => {});
+    };
+
+    tryPlay();
+
+    // iOS (especially Low Power Mode) silently blocks autoplay —
+    // retry on the first user gesture until playback actually starts.
+    const gestures: (keyof WindowEventMap)[] = ["touchstart", "touchend", "click"];
+    gestures.forEach((g) => window.addEventListener(g, tryPlay, { passive: true }));
+    const onPlaying = () => {
+      gestures.forEach((g) => window.removeEventListener(g, tryPlay));
+    };
+    first.addEventListener("playing", onPlaying, { once: true });
+
+    return () => {
+      gestures.forEach((g) => window.removeEventListener(g, tryPlay));
+      first.removeEventListener("playing", onPlaying);
+    };
   }, []);
 
   return (
@@ -88,11 +127,22 @@ const VideoHero: React.FC = () => {
           style={{ transform: `translateX(${(i - current) * 100}%)` }}
         >
           <video
-            ref={(el) => { videoRefs.current[i] = el!; }}
-            src={v.src}
+            ref={(el) => {
+              if (!el) return;
+              // iOS Safari needs muted/playsInline set as early as possible
+              el.defaultMuted = true;
+              el.muted = true;
+              el.playsInline = true;
+              videoRefs.current[i] = el;
+            }}
+            src={i === 0 || loadSecond ? v.src : undefined}
+            poster={v.poster}
+            preload={i === 0 ? "auto" : "none"}
+            autoPlay={i === 0}
             muted
             playsInline
             loop={false}
+            disablePictureInPicture
             className="absolute inset-0 w-full h-full object-cover"
           />
         </div>

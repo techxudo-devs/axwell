@@ -29,7 +29,7 @@ const Work: React.FC = () => {
     {
       id: 3,
       tag: "In Development",
-      title: "King of Pop (working title)",
+      title: "King of Pop ",
       genre: "Documentary · Music →",
       description:
         "The story of 'King of Pop' Michael Jackson. From his childhood as the star of the Jackson 5, through times of abuse by his father Joe Jackson, to breaking away and making the hit album Thriller and claiming his independence as a solo artist.",
@@ -37,7 +37,7 @@ const Work: React.FC = () => {
     {
       id: 4,
       tag: "In Development",
-      title: "Van Gogh (working title)",
+      title: "Van Gogh (",
       genre: "Biopic · Art →",
       description:
         "An intoxicating biopic about the art world's mad genius, Vincent van Gogh.",
