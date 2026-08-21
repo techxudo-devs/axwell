@@ -151,7 +151,7 @@ const Footer = () => {
         </p>
 
         <p className="mt-4 text-center text-[9px] sm:text-[10px] uppercase tracking-wider sm:tracking-wider text-white/25">
-          18+ Event · Valid ID required for PLATINUM &amp; VVIP tiers
+          18+ Event · Valid ID required
         </p>
 
         <p className="mt-5 text-center text-[9px] sm:text-[10px] tracking-wider text-white/20">

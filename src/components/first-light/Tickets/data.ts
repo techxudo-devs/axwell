@@ -85,7 +85,7 @@ export const TICKETS: Ticket[] = [
   },
   {
     id: "vvip",
-    name: "VVIP",
+    name: "VIP",
     price: "30,000 PKR",
     priceFull: "PKR 30,000",
     earlyBirdPrice: "25,000 PKR",
@@ -97,7 +97,7 @@ export const TICKETS: Ticket[] = [
     featured: true,
     color: "#4B0082",
     features: [
-      "Premium VVIP standing enclosure with elevated sightlines",
+      "Premium VIP standing enclosure with elevated sightlines",
       "Fast-track entry via Gate 1",
       "VIP bar access",
       "Upgraded washrooms and dedicated F&B points",
@@ -105,16 +105,16 @@ export const TICKETS: Ticket[] = [
       "ID-matched entry",
     ],
     registration: {
-      eyebrow: "VVIP",
+      eyebrow: "VIP",
       title: "An elevated standing enclosure with a clean line to the stage, VIP bar access, and a faster way in",
-      body: "VVIP — Premium VVIP standing enclosure with elevated sightlines and dedicated hospitality. Separated from the general audience zones by barriers and dedicated stewarding. VIP bar access, upgraded washroom facilities, and dedicated F&B points. Fast-track entry via Gate 1 with no queuing. Early entry from 4:00 PM to settle in before the show. Photo ID required at gate — ID-matched entry. Wristband issued on entry. No re-entry after exit.",
+      body: "VIP — Premium VIP standing enclosure with elevated sightlines and dedicated hospitality. Separated from the general audience zones by barriers and dedicated stewarding. VIP bar access, upgraded washroom facilities, and dedicated F&B points. Fast-track entry via Gate 1 with no queuing. Early entry from 4:00 PM to settle in before the show. Photo ID required at gate — ID-matched entry. Wristband issued on entry. No re-entry after exit.",
       highlights: [
         "First Light Founding Member — + PKR 1,500 per ticket",
         "Lucky draw: meet the headliner + Exclusive Stage Pass · Tier upgrade opportunity · Fast Lane at future OP events · Early access to future editions · Founding Members registry listing. Add for all tickets in this order.",
         "Up to 5 tickets per ID — ID-matched entry",
         "Each ticket is registered to a unique government-issued ID. The name on your ticket must match your ID. Each ticket carries a unique single-use QR code.",
       ],
-      agePolicy: "Age 18+ only for VVIP.",
+      agePolicy: "Age 18+ only for VIP.",
       idPolicy: "Government-issued Photo ID mandatory. ID-matched entry.",
       addOn: {
         label: "First Light Founding Member",

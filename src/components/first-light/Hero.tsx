@@ -42,7 +42,7 @@ const Hero = () => {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0FB6AE]/[0.04] via-transparent to-[#18060F]/[0.04]" />
 
         <div className="relative mx-auto flex w-full max-w-[1400px] items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:py-3.5">
-          <a href="https://axwell-landing.vercel.app/" target="_blank" rel="noopener noreferrer" className="group flex shrink-0 flex-col">
+          <a href="https://axwell.vercel.app/production-and-media" target="_blank" rel="noopener noreferrer" className="group flex shrink-0 flex-col">
             <span
               className={`font-just whitespace-nowrap text-[16px] leading-none transition-colors group-hover:text-[#0FB6AE]/90 sm:text-[18px] lg:text-[20px]`}
             >

@@ -668,7 +668,7 @@ const TicketRegistrationModal = ({
                           <p className="mt-1.5 text-sm leading-6 text-white/70">
                             Each ticket is tied to one unique government-issued
                             ID. Fill in the details for every person attending.
-                            Age 15+ only (18+ for VVIP & PLATINUM). Ticket 1 is the
+                            Age 15+ only (18+ for VIP & PLATINUM). Ticket 1 is the
                             lead buyer — all confirmation emails and OTP go to
                             their contact details.
                           </p>
@@ -744,7 +744,7 @@ const TicketRegistrationModal = ({
                                 className="mt-2 w-full rounded-2xl border border-white/10 bg-black/35 px-4 py-3 text-sm text-white outline-none transition focus:border-[#0FB6AE]/60 focus:ring-2 focus:ring-[#0FB6AE]/15"
                               />
                               <p className="mt-1 text-[11px] text-white/30">
-                                Must be 15+ at event date (18+ for VVIP/PLATINUM).
+                                Must be 15+ at event date (18+ for VIP/PLATINUM).
                               </p>
                             </label>
 
@@ -910,7 +910,7 @@ const TicketRegistrationModal = ({
                       className="mt-1 h-4 w-4 rounded border-white/20 bg-transparent text-[#0FB6AE] accent-[#0FB6AE]"
                     />
                     <p className="text-sm leading-7 text-white/72">
-                      I confirm all attendees are aged 15+ (18+ for VVIP/PLATINUM)
+                      I confirm all attendees are aged 15+ (18+ for VIP/PLATINUM)
                       and will bring valid government-issued ID. Under-18
                       attendees will be accompanied by a parent or guardian.
                     </p>

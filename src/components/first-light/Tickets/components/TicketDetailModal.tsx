@@ -335,7 +335,7 @@ const TicketDetailModal = ({ ticket, onClose }: TicketDetailModalProps) => {
             <span
               className={`font-just text-xs text-white/40`}
             >
-              {ticket.id.toUpperCase()}-2026
+              {ticket.name.toUpperCase()}-2026
             </span>
           </div>
 

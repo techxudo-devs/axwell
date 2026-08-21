@@ -387,10 +387,10 @@ export default function Map2() {
               </text>
             </g>
 
-            {/* ================= V.V.I.P. SECTION ================= */}
+            {/* ================= VIP SECTION ================= */}
             <g
               className="hover:opacity-90 transition-opacity cursor-pointer"
-              onPointerEnter={(e) => handleMouseEnter(e, "V.V.I.P. 400 x 25")}
+              onPointerEnter={(e) => handleMouseEnter(e, "VIP 400 x 25")}
               onMouseLeave={handleMouseLeave}
               onClick={() => openTicketDetails("vvip")}
             >
@@ -412,7 +412,7 @@ export default function Map2() {
                 fontWeight="800"
                 letterSpacing="2"
               >
-                V.V.I.P.
+                VIP
               </text>
             </g>
 

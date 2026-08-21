@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import InitialLoader from "@/common/InitialLoader";
 import CustomCursor from "@/components/common/CustomCursor";
+import WhatsAppButton from "@/components/common/WhatsAppButton";
 
 export const metadata: Metadata = {
   title: "OP Productions",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <div id="main-content-wrapper" className="min-h-full flex flex-col">
           <CustomCursor />
           {children}
+          <WhatsAppButton />
         </div>
       </body>
     </html>

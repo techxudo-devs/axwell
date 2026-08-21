@@ -105,7 +105,7 @@ const Hero = () => {
       </div>
 
       <footer className="w-full bg-[#12040b]/40 border-t border-[#0FB6AE]/10 py-3 px-4 md:px-6 grid md:grid-cols-3 items-center justify-center select-none z-40 gap-3">
-        <div className="flex items-center gap-3 md:gap-4 justify-center md:justify-self-start">
+        <div className="flex items-center gap-3 md:gap-4 justify-center md:justify-self-start order-2 md:order-none">
           {socialLinks.map(({ icon: Icon, href, label }) => (
             <a
               key={label}
@@ -119,7 +119,7 @@ const Hero = () => {
             </a>
           ))}
         </div>
-        <span className="justify-self-center text-[9px] md:text-[10px] font-medium font-plus tracking-widest text-white/50 uppercase whitespace-nowrap md:pt-0 pt-1">
+        <span className="justify-self-center text-[9px] md:text-[10px] font-medium font-plus tracking-widest text-white/50 uppercase whitespace-nowrap md:pt-0 pt-1 order-1 md:order-none">
           Developed by{' '}
           <a
             href="https://prmedia.io/"
@@ -132,7 +132,7 @@ const Hero = () => {
         </span>
         <a
           href="mailto:hello@opproductions.com"
-          className="md:justify-self-end text-[9px] md:text-[10px] font-medium font-plus tracking-widest uppercase whitespace-nowrap text-white/50 hover:text-white transition-colors duration-200"
+          className="md:justify-self-end text-[9px] md:text-[10px] font-medium font-plus tracking-widest uppercase whitespace-nowrap text-white/50 hover:text-white transition-colors duration-200 order-3 md:order-none"
         >
           hello@opproductions.com
         </a>
