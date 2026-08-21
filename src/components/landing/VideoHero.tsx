@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const videos = [
   {
     src: "/videos/echoboomers.mp4",
+    poster: "/videos/posters/echoboomers.jpg",
     title: "ECHO BOOMERS",
     tags: ["Movie", "Short - Feature"],
     year: "2020",
@@ -19,6 +20,7 @@ const videos = [
   },
   {
     src: "/videos/michelshort.mp4",
+    poster: "/videos/posters/michelshort.jpg",
     title: "KING OF POP",
     tags: ["Documentary", "Short"],
     year: "2026",
@@ -91,7 +93,28 @@ const VideoHero: React.FC = () => {
 
   useEffect(() => {
     const first = videoRefs.current[0];
-    if (first) first.play().catch(() => {});
+    if (!first) return;
+
+    const tryPlay = () => {
+      if (!first.paused) return;
+      first.play().catch(() => {});
+    };
+
+    tryPlay();
+
+    // iOS (especially Low Power Mode) silently blocks autoplay —
+    // retry on the first user gesture until playback actually starts.
+    const gestures: (keyof WindowEventMap)[] = ["touchstart", "touchend", "click"];
+    gestures.forEach((g) => window.addEventListener(g, tryPlay, { passive: true }));
+    const onPlaying = () => {
+      gestures.forEach((g) => window.removeEventListener(g, tryPlay));
+    };
+    first.addEventListener("playing", onPlaying, { once: true });
+
+    return () => {
+      gestures.forEach((g) => window.removeEventListener(g, tryPlay));
+      first.removeEventListener("playing", onPlaying);
+    };
   }, []);
 
   return (
@@ -104,9 +127,18 @@ const VideoHero: React.FC = () => {
           style={{ transform: `translateX(${(i - current) * 100}%)` }}
         >
           <video
-            ref={(el) => { videoRefs.current[i] = el!; }}
+            ref={(el) => {
+              if (!el) return;
+              // iOS Safari needs muted/playsInline set as early as possible
+              el.defaultMuted = true;
+              el.muted = true;
+              el.playsInline = true;
+              videoRefs.current[i] = el;
+            }}
             src={i === 0 || loadSecond ? v.src : undefined}
+            poster={v.poster}
             preload={i === 0 ? "auto" : "none"}
+            autoPlay={i === 0}
             muted
             playsInline
             loop={false}
