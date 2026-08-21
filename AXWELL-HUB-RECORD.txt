@@ -194,7 +194,7 @@ TICKET TIERS:
   Silver          PKR 10,500     PKR 12,500    445       Gate 3  4:00 PM
   Gold            PKR 14,999     PKR 18,500    200       Gate 2  4:15 PM
   Gold (Women's)  PKR 12,999     PKR 14,999    200       Gate 2  4:15 PM
-  VVIP            PKR 25,000     PKR 30,000    50        Gate 1  4:00 PM
+  VIP            PKR 25,000     PKR 30,000    50        Gate 1  4:00 PM
   PLATINUM        PKR 45,000     PKR 50,000    5         Gate 1  4:30 PM
 
   Add-on: First Light Founding Member — +PKR 1,500/ticket

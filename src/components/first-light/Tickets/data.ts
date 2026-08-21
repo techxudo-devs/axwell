@@ -84,7 +84,7 @@ export const TICKETS: Ticket[] = [
     },
   },
   {
-    id: "vvip",
+    id: "vip",
     name: "VIP",
     price: "30,000 PKR",
     priceFull: "PKR 30,000",

@@ -39,7 +39,7 @@ const faqsData: FAQItem[] = [
     id: 6,
     category: 'FAQ',
     question: 'How many tickets can I buy?',
-    answer: "Per-ID limits keep entry fair and secure — Bronze up to 10, Silver up to 6, Gold up to 8, Gold Women's up to 5, VVIP up to 5, PLATINUM up to 4 per transaction. Each ticket carries a unique single-use QR code tied to one entry, so buy for your group in one go and share each person's QR before the gates.",
+    answer: "Per-ID limits keep entry fair and secure — Bronze up to 10, Silver up to 6, Gold up to 8, Gold Women's up to 5, VIP up to 5, PLATINUM up to 4 per transaction. Each ticket carries a unique single-use QR code tied to one entry, so buy for your group in one go and share each person's QR before the gates.",
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ const faqsData: FAQItem[] = [
     id: 5,
     category: 'FAQ',
     question: 'Do I need Id at the gate?',
-    answer: "This is an 18+ event, so carry a valid government-issued ID (CNIC or passport). PLATINUM and VVIP tickets are ID-matched — the name on your ticket must match your ID. Bronze entry is by QR scan only. Whatever your tier, have your QR e-ticket ready for scanning.",
+    answer: "This is an 18+ event, so carry a valid government-issued ID (CNIC or passport). PLATINUM and VIP tickets are ID-matched — the name on your ticket must match your ID. Bronze entry is by QR scan only. Whatever your tier, have your QR e-ticket ready for scanning.",
   },
   {
     id: 8,
@@ -97,7 +97,7 @@ const clocksData: ClockItem[] = [
   { name: 'SILVER', hours: 16, minutes: 0, label: '4:00 PM · Gate 3' },
   { name: 'GOLD', hours: 16, minutes: 15, label: '4:15 PM · Gate 2' },
   { name: 'PLATINUM', hours: 16, minutes: 30, label: '4:30 PM · Gate 1' },
-  { name: 'VVIP', hours: 16, minutes: 0, label: '4:00 PM · Gate 1' },
+  { name: 'VIP', hours: 16, minutes: 0, label: '4:00 PM · Gate 1' },
 ];
 
 const AnalogClock = ({ name, hours, minutes, label }: ClockItem) => {

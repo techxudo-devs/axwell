@@ -392,7 +392,7 @@ export default function Map2() {
               className="hover:opacity-90 transition-opacity cursor-pointer"
               onPointerEnter={(e) => handleMouseEnter(e, "VIP 400 x 25")}
               onMouseLeave={handleMouseLeave}
-              onClick={() => openTicketDetails("vvip")}
+              onClick={() => openTicketDetails("vip")}
             >
               <rect
                 x="47"

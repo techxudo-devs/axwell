@@ -9,7 +9,7 @@ const policies = [
     body: [
       "If OP Productions cancels the event — or a force-majeure event prevents it — you're entitled to a full refund of the ticket face value, processed to your original payment method within 14 business days.",
       "If the event is postponed, your ticket automatically remains valid for the new date — no action needed. If you can't attend the rescheduled date, request a refund within 14 days of the new date being announced.",
-      "No refunds for change of mind, personal circumstances, denied entry due to an invalid or duplicate QR, intoxication, or breach of venue rules.",
+      "No refunds for change of mind, personal circumstances, denied entry due to an invalid or duplicate QR, Wrong CNIC/Passport intoxication, or breach of venue rules.",
       "Booking / processing fees charged by Ticketwala may be non-refundable.",
       "Force majeure includes acts of God, natural disaster, government or security directives, curfew, public-health orders, artist unavailability beyond OP Productions' control, or any event outside OP Productions' reasonable control.",
     ],
@@ -27,7 +27,7 @@ const policies = [
     title: "Entry, ID & Age",
     body: [
       "Strictly 18+. Valid government-issued ID (CNIC / passport) required.",
-      "PLATINUM & VVIP are ID-matched to the purchaser; Bronze is QR-scan entry.",
+      "PLATINUM & VIP are ID-matched to the purchaser; Bronze is QR-scan entry.",
       "Security screening is mandatory at all gates. Arrive early to clear security before your tier's gate time.",
     ],
   },

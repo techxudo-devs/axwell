@@ -16,7 +16,7 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
         return "linear-gradient(110deg, #b8860b 0%, #d4af37 40%, #fbbf24 50%, #d4af37 70%, #b8860b 100%)";
       case "gold-women":
         return "linear-gradient(110deg, #FFD700 0%, #FDB931 40%, #FFE600 50%, #FDB931 70%, #FFD700 100%)";
-      case "vvip":
+      case "vip":
         return "linear-gradient(110deg, #4B0082 0%, #2a003a 40%, #4B0082 50%, #2a003a 70%, #4B0082 100%)";
       case "platinum":
         return "linear-gradient(110deg, #000000 0%, #1a1a1a 40%, #262626 50%, #1a1a1a 70%, #000000 100%)";
@@ -25,7 +25,7 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
     }
   };
 
-  const isDark = ticket.id === "vvip" || ticket.id === "platinum";
+  const isDark = ticket.id === "vip" || ticket.id === "platinum";
   const textColor = isDark ? "text-white" : "text-[#0a0010]";
   const secondaryTextColor = isDark ? "text-white/80" : "text-[#0a0010]/80";
   const barcodeColor = isDark ? "#ffffff" : "#0a0010";

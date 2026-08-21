@@ -130,7 +130,7 @@ const Tickets = () => {
               }
             />
             <TicketCard
-              ticket={getTicketById("vvip")}
+              ticket={getTicketById("vip")}
               onDetails={(ticket) =>
                 setActiveModal({ type: "details", ticket })
               }
