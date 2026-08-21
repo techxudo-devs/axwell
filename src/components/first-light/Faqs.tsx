@@ -1,8 +1,21 @@
 "use client"
 
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import Venue from '@/components/first-light/Venue';
 import { CircleQuestionMark, Mail, ChevronDown, Loader2, CheckCircle, Send } from 'lucide-react';
+
+const EMAILJS_SERVICE_ID = 'service_gdipzyr'
+const EMAILJS_TEMPLATE_ID = 'template_1vm1i4g'
+const EMAILJS_PUBLIC_KEY = 'YCQqjBVRZovx6t5Q9'
+
+const SERVICE_LABELS: Record<string, string> = {
+  partnership: 'Partnership',
+  sponsorship: 'Sponsorship',
+  booking: 'Live Booking',
+  management: 'Management Inquiry',
+  other: 'Other',
+}
 
 const FaqActionButton = () => (
   <button
@@ -137,17 +150,32 @@ const Faqs = () => {
   const [contactService, setContactService] = useState("");
   const [contactStatus, setContactStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-  const handleContactSubmit = () => {
+  const handleContactSubmit = async () => {
     if (!contactEmail || !contactService) return;
     setContactStatus("submitting");
-    setTimeout(() => {
+
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_email: contactEmail,
+          reply_to: contactEmail,
+          service: SERVICE_LABELS[contactService] || contactService,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+
       setContactStatus("success");
-    }, 1500);
-    setTimeout(() => {
+      setTimeout(() => {
+        setContactStatus("idle");
+        setContactEmail("");
+        setContactService("");
+      }, 4500);
+    } catch (error) {
+      console.error("Failed to send inquiry:", error);
       setContactStatus("idle");
-      setContactEmail("");
-      setContactService("");
-    }, 4500);
+    }
   };
 
   const handlePrev = () => {
