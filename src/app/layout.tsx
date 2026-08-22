@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleTagManager } from '@next/third-parties/google';
 import InitialLoader from "@/common/InitialLoader";
 import CustomCursor from "@/components/common/CustomCursor";
 import WhatsAppButton from "@/components/common/WhatsAppButton";
@@ -24,6 +25,9 @@ export default function RootLayout({
         <div id="main-content-wrapper" className="min-h-full flex flex-col">
           <CustomCursor />
           {children}
+          <GoogleTagManager
+            gtmId={process.env.NEXT_PUBLIC_GTM_ID!}
+          />
           <WhatsAppButton />
         </div>
       </body>
