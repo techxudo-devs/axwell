@@ -10,6 +10,7 @@ const FOOTER_LINKS = [
   { label: "Venue", href: "#venue" },
   { label: "FAQ", href: "#faqs" },
   { label: "Ticketwala", href: "https://ticketwala.pk/event/first-light-axwell-6005" },
+  { label: "Terms & Conditions", href: "/event-terms-and-conditions" },
 ] as const;
 
 const MARQUEE_ITEMS = [
