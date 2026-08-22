@@ -45,7 +45,7 @@ const faqsData: FAQItem[] = [
     id: 7,
     category: 'FAQ',
     question: 'Who else is performing?',
-    answer: 'Opening the night: Bilal Brohi, Hazey and Shotbox. Topping the bill — Axwell The confirmed running order and set times drop with the full announcement.',
+    answer: 'Opening the night: Bilal Brohi, Hazey. Topping the bill — Axwell The confirmed running order and set times drop with the full announcement.',
   },
   {
     id: 1,
