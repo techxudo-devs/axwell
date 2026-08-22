@@ -18,7 +18,7 @@ const EarlyBirdCountdown = () => {
   if (expired) return null;
 
   return (
-    <div className="group relative mb-8 flex w-full max-w-[850px] flex-col items-center justify-center gap-3 overflow-hidden rounded-2xl border border-[#0FB6AE]/20 bg-white/[0.03] px-4 py-4 backdrop-blur-sm transition-colors duration-500 hover:border-[#0FB6AE]/35 sm:flex-row sm:gap-6 sm:px-8">
+    <div className="group relative mb-8 flex w-full max-w-[850px] flex-col items-center justify-center gap-3 overflow-hidden px-4 py-4 sm:flex-row sm:gap-6 sm:px-8">
       {/* Teal glow accents */}
       <div className="pointer-events-none absolute -top-12 left-1/4 h-20 w-56 rounded-full bg-[#0FB6AE]/10 blur-3xl" />
       <div className="pointer-events-none absolute -top-12 right-1/4 h-20 w-56 rounded-full bg-[#18060F]/15 blur-3xl" />
