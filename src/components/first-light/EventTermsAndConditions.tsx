@@ -384,15 +384,6 @@ const EventTermsAndConditions = () => {
         <p className="mx-auto mb-14 max-w-2xl text-center text-[11px] uppercase tracking-wider text-white/50 md:text-sm">
           DHA Sports Club (Moin Khan Academy), Phase 8, Karachi
         </p>
-
-        {/* Intro */}
-        <p className={`${bodyText} mx-auto mb-14 max-w-4xl`}>
-          This Document is the complete and binding set of Terms &amp; Conditions for First Light. It incorporates the
-          short-form Terms &amp; Conditions presented at checkout, the Do&apos;s &amp; Don&apos;ts, the Health &amp;
-          Safety Notice, and all governing rules referenced on the ticket, the Ticketwala listing, and event signage.
-          Purchase or possession of a ticket constitutes acceptance of these Terms &amp; Conditions in full.
-        </p>
-
         {/* Definitions */}
         <h2 className="mb-6 border-b border-white/10 pb-4 text-[24px] uppercase tracking-wide text-[#0FB6AE] drop-shadow-[0_0_15px_rgba(15,182,174,0.3)] md:text-[28px]">
           Definitions

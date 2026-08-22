@@ -50,18 +50,13 @@ const TopBanner = () => {
       <div className="relative flex items-center justify-center gap-3 px-4 py-2.5 select-none">
         <Sparkles size={14} className="text-[#0FB6AE] shrink-0 animate-pulse" />
 
-        <p className="font-plus text-[10px] sm:text-xs font-medium uppercase tracking-wider whitespace-nowrap">
+        <p className="font-just text-[10px] sm:text-xs font-medium uppercase tracking-wider whitespace-nowrap">
           <span className="text-[#0FB6AE] font-bold">Early Bird Discount</span>
-          {phase === "live" && (
-            <span className="text-white/70 hidden sm:inline"> — Limited Time</span>
-          )}
-          {phase === "waiting" && (
-            <span className="text-white/70 hidden sm:inline"> — Starts Soon</span>
-          )}
+          <span className="text-white/80"> Ends In</span>
         </p>
 
         {/* Countdown */}
-        <div className="flex items-center gap-1 font-plus text-[11px] sm:text-sm font-bold tabular-nums">
+        <div className="flex items-center gap-1 font-just text-[11px] sm:text-sm font-bold tabular-nums">
           {[
             { value: formatUnit(hours), label: "HRS" },
             { value: formatUnit(minutes), label: "MIN" },
