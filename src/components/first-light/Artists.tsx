@@ -133,7 +133,7 @@ He remains a fixture at the world's most prestigious festivals including Ultra M
 ];
 
 const Artists = () => {
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(1);
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
 
   // --- High Performance Cursor Tracking ---
