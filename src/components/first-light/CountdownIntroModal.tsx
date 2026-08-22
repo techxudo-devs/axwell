@@ -3,6 +3,9 @@
 import { Ticket, ChevronRight, X } from "lucide-react";
 import EventCountdown from "./EventCountdown";
 
+// Early Bird discount window closes 48h after sale start (22 Aug 2026, 5:00 PM PKT)
+const EARLY_BIRD_ENDS_AT = new Date("2026-08-24T17:00:00+05:00");
+
 
 interface CountdownIntroModalProps {
   active: boolean;
@@ -67,18 +70,22 @@ const CountdownIntroModal = ({ active, onClose }: CountdownIntroModalProps) => {
               </div>
               <h2
                 id="intro-countdown-title"
-                className={`font-just text-[32px] sm:text-[42px] uppercase leading-none text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]`}
+                className={`font-just text-[24px] min-[390px]:text-[28px] sm:text-[36px] uppercase leading-tight text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]`}
               >
-                Tickets <span className="text-[#0FB6AE]">Go Live</span>
+                Early Bird <span className="text-[#0FB6AE]">Discount</span> Ends In
               </h2>
             </div>
 
-            <EventCountdown className="gap-1.5 sm:gap-3" />
+            <EventCountdown
+              className="gap-1.5 sm:gap-3"
+              targetDate={EARLY_BIRD_ENDS_AT}
+              maxDurationMs={48 * 60 * 60 * 1000}
+            />
 
             <div className="mt-7 grid grid-cols-2 gap-2 border-t border-white/8 pt-6">
               {[
                 { val: "Axwell", lbl: "Headliner", color: "#ffffff" },
-                { val: "22 AUG", lbl: "2026", color: "#0FB6AE" },
+                  { val: "19 SEP", lbl: "2026", color: "#0FB6AE" },
               ].map((stat) => (
                 <div key={stat.lbl} className="text-center">
                   <p

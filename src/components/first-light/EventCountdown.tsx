@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 
-const DEFAULT_TARGET = new Date(2026, 7, 22, 17, 0, 0).getTime();
+const DEFAULT_TARGET = new Date(2026, 8, 19, 17, 0, 0).getTime();
 
 type CountdownUnit = {
   value: number;
@@ -16,13 +16,24 @@ interface EventCountdownProps {
   className?: string;
   targetDate?: Date;
   onComplete?: () => void;
+  /** Never display more than this much remaining time (ms) */
+  maxDurationMs?: number;
 }
 
-const EventCountdown = ({ compact = false, className = "", targetDate, onComplete }: EventCountdownProps) => {
+const EventCountdown = ({
+  compact = false,
+  className = "",
+  targetDate,
+  onComplete,
+  maxDurationMs,
+}: EventCountdownProps) => {
   const targetTime = useRef(targetDate ? targetDate.getTime() : DEFAULT_TARGET);
 
   const getTimeLeft = () => {
-    const diff = targetTime.current - Date.now();
+    let diff = targetTime.current - Date.now();
+    if (maxDurationMs !== undefined && diff > maxDurationMs) {
+      diff = maxDurationMs;
+    }
     return Math.max(0, Math.floor(diff / 1000));
   };
 

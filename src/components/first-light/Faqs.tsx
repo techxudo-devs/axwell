@@ -93,7 +93,7 @@ const faqsData: FAQItem[] = [
     id: 10,
     category: 'FAQ',
     question: 'What Time and date do normal ticket open?',
-    answer: 'Tickets will be announced on 22 August 2026 at 5:00 PM. The Early Bird discount will remain valid for 48 hours, meaning the discount will end on 24 August 2026 at 5:00 PM. From 24 August 2026 at 5:00 PM onwards, normal ticket pricing will apply.'
+    answer: 'Tickets were announced on 22 August 2026 at 5:00 PM. The Early Bird discount will remain valid for 48 hours, meaning the discount will end on 24 August 2026 at 5:00 PM. From 24 August 2026 at 5:00 PM onwards, normal ticket pricing will apply.'
 
   },
 ];
