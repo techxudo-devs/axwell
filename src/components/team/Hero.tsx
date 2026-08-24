@@ -88,10 +88,10 @@ const Hero: React.FC = () => {
     },
     {
       id: "11",
-      name: "Solomon Yaqub",
+      name: "Solomon Moin Yakoob",
       role: "Office Admin Manager and Secretary Finance",
       img: "/images/image6.jpeg",
-      bio: "Solomon Yaqub manages office administration and financial coordination at OP Productions. From organizing records to supporting music and event operations, he brings accuracy and reliability to every task, keeping team and operations organized.",
+      bio: "Solomon Moin Yakoob manages office administration and financial coordination at OP Productions. From organizing records to supporting music and event operations, he brings accuracy and reliability to every task, keeping team and operations organized.",
     },
   ];
 
