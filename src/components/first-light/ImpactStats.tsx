@@ -187,7 +187,7 @@ const ImpactStats = () => {
                         textShadow: `0 0 30px ${stat.glow}`,
                       }}
                     >
-                      24
+                      19
                     </span>
                   ) : (
                     <span
@@ -211,7 +211,7 @@ const ImpactStats = () => {
                   {stat.label}
                   {stat.detail && (
                     <>
-                      <span className="mx-1.5 text-white/20">—</span>
+                      {/* <span className="mx-1.5 text-white/20"></span> */}
                       <span className="text-white/55">{stat.detail}</span>
                     </>
                   )}
