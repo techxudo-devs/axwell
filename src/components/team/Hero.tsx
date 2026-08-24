@@ -74,10 +74,24 @@ const Hero: React.FC = () => {
     },
     {
       id: "09",
+      name: "Haris Sajjad Siyal",
+      role: "Digital Media & Crisis Management",
+      img: "/images/image9.png",
+      bio: "Haris Sajjad Siyal drives the critical intersection of brand reputation and modern digital strategy. As a Digital Media PR specialist, he focuses on scaling online presence, managing high-visibility campaigns, and cultivating highly engaged digital communities.",
+    },
+    {
+      id: "10",
+      name: "Syed Muhammad Talha",
+      role: "Technical Strategist",
+      img: "/images/image7.png",
+      bio: "Talha leads digital and web solutions, product strategy, and business growth, combining technology, innovation, and strategic thinking to create meaningful impact.",
+    },
+    {
+      id: "11",
       name: "Solomon Yaqub",
-      role: "Associate Manager",
+      role: "Office Admin Manager and Secretary Finance",
       img: "/images/image6.jpeg",
-      bio: "Solomon Yaqub assists in managing production activities and event operations at OP Productions. From scheduling to on-site support, he brings energy and reliability to every task, helping the crew deliver polished results consistently.",
+      bio: "Solomon Yaqub manages office administration and financial coordination at OP Productions. From organizing records to supporting music and event operations, he brings accuracy and reliability to every task, keeping team and operations organized.",
     },
   ];
 
@@ -189,7 +203,7 @@ const Hero: React.FC = () => {
                       loading="lazy"
                       src={selectedMember.img}
                       alt={selectedMember.name}
-                      className="w-full h-full object-cover object-top scale-105"
+                      className="w-full h-full object-cover object-top"
                     />
                   ) : (
                     <div className="w-full h-full flex items-center justify-center bg-neutral-800">
