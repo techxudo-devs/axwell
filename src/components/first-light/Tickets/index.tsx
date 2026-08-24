@@ -8,6 +8,7 @@ import TicketCard from "./components/TicketCard";
 import TicketDetailModal from "./components/TicketDetailModal";
 import TicketRegistrationModal from "./components/TicketRegistrationModal";
 import TicketsBackground from "./components/TicketsBackground";
+import EarlyBirdCountdown from "@/components/first-light/EarlyBirdCountdown";
 
 type ActiveModal =
   | { type: "details"; ticket: Ticket }
@@ -50,6 +51,8 @@ const Tickets = () => {
       <TicketsBackground />
 
       <div className="relative z-10 w-full max-w-[920px] flex flex-col items-center">
+        <EarlyBirdCountdown />
+
         <h2
           className={`font-just text-[40px] md:text-[50px] leading-none lg:text-[56px] text-[#0FB6AE] mb-14 text-center uppercase drop-shadow-[0_0_15px_rgba(15,182,174,0.3)]`}
         >

@@ -14,6 +14,7 @@ import Newsletter from "@/components/first-light/Newsletter";
 import CountdownIntroModal from "@/components/first-light/CountdownIntroModal";
 import Footer from "@/components/first-light/Footer";
 import Map2 from "@/components/first-light/Map2";
+import TopBanner from "@/components/common/TopBanner";
 
 const INTRO_ANIM_MS = 450;
 const SITE_REVEAL_MS = 700;
@@ -77,6 +78,7 @@ const Main = () => {
         style={{ transitionDuration: `${SITE_REVEAL_MS}ms` }}
         aria-hidden={showIntro && !siteRevealed}
       >
+        <TopBanner />
         <Hero />
         <Revealing />
         <ImpactStats />

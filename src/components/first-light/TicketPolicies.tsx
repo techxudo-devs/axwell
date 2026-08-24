@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 
 const policies = [
@@ -161,6 +163,21 @@ const TicketPolicies = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Read More */}
+        <div data-reveal-item className="venue-reveal-item mt-14 flex justify-center">
+          <Link
+            href="/event-terms-and-conditions"
+            className="group relative flex h-10 sm:h-11 shrink-0 items-center justify-center gap-2 overflow-hidden rounded-full bg-[#18060F] px-6 sm:px-8 text-sm sm:text-base uppercase text-white shadow-[0_0_30px_rgba(24,6,15,0.4)] transition-all duration-300 hover:shadow-[0_0_45px_rgba(24,6,15,0.6)] active:scale-95"
+          >
+            <span className="absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            Read More
+            <ArrowUpRight
+              size={16}
+              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:size-[18px]"
+            />
+          </Link>
         </div>
       </div>
     </section>

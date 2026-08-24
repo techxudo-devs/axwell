@@ -10,12 +10,13 @@ const FOOTER_LINKS = [
   { label: "Venue", href: "#venue" },
   { label: "FAQ", href: "#faqs" },
   { label: "Ticketwala", href: "https://ticketwala.pk/event/first-light-axwell-6005" },
+  { label: "Terms & Conditions", href: "/event-terms-and-conditions" },
 ] as const;
 
 const MARQUEE_ITEMS = [
   "FIRST LIGHT",
   "Axwell LIVE",
-  "22 AUG 2026",
+  "19 SEP 2026",
   "DHA Golf Club (MOIN KHAN ACADEMY)",
   "KARACHI",
   "GATES FROM 4:00 PM",
@@ -99,7 +100,7 @@ const Footer = () => {
           </span>
           Live in Karachi
           <span className="mx-1.5 sm:mx-2 text-[#18060F]">•</span>
-           22 August 2026
+           19 September 2026
           <span className="mx-1.5 sm:mx-2 text-[#18060F]">•</span>
           DHA Golf Club (Moin Khan Academy)
         </p>

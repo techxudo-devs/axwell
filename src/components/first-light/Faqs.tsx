@@ -45,7 +45,7 @@ const faqsData: FAQItem[] = [
     id: 7,
     category: 'FAQ',
     question: 'Who else is performing?',
-    answer: 'Opening the night: Bilal Brohi, Hazey and Shotbox. Topping the bill — Axwell The confirmed running order and set times drop with the full announcement.',
+    answer: 'Opening the night: Bilal Brohi, Hazey. Topping the bill — Axwell The confirmed running order and set times drop with the full announcement.',
   },
   {
     id: 1,
@@ -93,7 +93,7 @@ const faqsData: FAQItem[] = [
     id: 10,
     category: 'FAQ',
     question: 'What Time and date do normal ticket open?',
-    answer: 'Tickets will be announced on 22 August 2026 at 5:00 PM. The Early Bird discount will remain valid for 48 hours, meaning the discount will end on 24 August 2026 at 5:00 PM. From 24 August 2026 at 5:00 PM onwards, normal ticket pricing will apply.'
+    answer: 'Tickets were announced on 22 August 2026 at 5:00 PM. The Early Bird discount will remain valid for 48 hours, meaning the discount will end on 24 August 2026 at 5:00 PM. From 24 August 2026 at 5:00 PM onwards, normal ticket pricing will apply.'
 
   },
 ];
