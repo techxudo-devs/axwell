@@ -10,10 +10,10 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 const STATS = [
   {
-    end: 24,
+    end: 19,
     suffix: "",
-    label: "Limited Seats",
-    detail: "19 September 2026",
+    label: "",
+    detail: "September 2026",
     accent: "#0FB6AE",
     border: "rgba(15,182,174,0.4)",
     bg: "rgba(15,182,174,0.1)",
