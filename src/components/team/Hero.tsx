@@ -214,12 +214,12 @@ const Hero: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0c030c] via-transparent to-black/35 z-10" />
 
                   {/* Top Left Glassmorphic Badge overlayed on image */}
-                  <div className="absolute top-3 left-3 z-20 flex items-center space-x-1.5 bg-[#0FB6AE]/10 border border-[#0FB6AE]/30 px-3 py-1 rounded-full backdrop-blur-sm">
-                    {/* <span className="w-1.5 h-1.5 rounded-full bg-[#0FB6AE] animate-pulse" /> */}
+                  {/* <div className="absolute top-3 left-3 z-20 flex items-center space-x-1.5 bg-[#0FB6AE]/10 border border-[#0FB6AE]/30 px-3 py-1 rounded-full backdrop-blur-sm">
+
                     <span className="font-plus text-[10px] tracking-wide text-[#0FB6AE] uppercase font-medium">
                       OPENING ACT - {selectedMember.id}
                     </span>
-                  </div>
+                  </div> */}
 
                   {/* Top Right Close Button overlayed on image */}
                   <button
