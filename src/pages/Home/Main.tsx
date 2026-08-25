@@ -84,7 +84,7 @@ const Main = () => {
         <ImpactStats />
         <Artists />
         <SetTimes />
-        <Map2 />
+        {/* <Map2 /> */}
         <Tickets />
         <DosAndDonts />
         <TicketPolicies />
