@@ -58,19 +58,19 @@ const AXWELL_EXTRA: ArtistExtra = {
 };
 
 const ArtistsData: Artist[] = [
-  // {
-  //   artist: "MR Shotbox",
-  //   role: "Opening Act-3rd",
-  //   imageUrl: shotbox.src,
-  //   bio: "Shotbox is Karachi's most ambitious alternative electronic music collective — an SECP-registered production venture that fuses fine art, kinetic sculptural installations, and MADRIX lighting technology with premium house music. Behind the decks, Mr. Shotbox delivers immersive sets spanning orchestral techno, melodic house, and cinematic soundscapes. The platform has hosted and collaborated with global headliners including Miss Monique, HOSH, Eelke Kleijn, Nick Devon, and Darin Epsilon, and has produced some of Pakistan's most visually and sonically ambitious electronic events to date. Shotbox is not just a DJ act — it is a complete production aesthetic.",
-  //   genre: ["House", "Bass"],
-  //   stage: "Main Stage",
-  //   setTime: "6:00 PM",
-  //   socials: [
-  //     { platform: "youtube", url: "" },
-  //     { platform: "instagram", url: "" },
-  //   ],
-  // },
+  {
+    artist: "MR Shotbox",
+    role: "Opening Act-3rd",
+    imageUrl: shotbox.src,
+    bio: "Shotbox is Karachi's most ambitious alternative electronic music collective — an SECP-registered production venture that fuses fine art, kinetic sculptural installations, and MADRIX lighting technology with premium house music. Behind the decks, Mr. Shotbox delivers immersive sets spanning orchestral techno, melodic house, and cinematic soundscapes. The platform has hosted and collaborated with global headliners including Miss Monique, HOSH, Eelke Kleijn, Nick Devon, and Darin Epsilon, and has produced some of Pakistan's most visually and sonically ambitious electronic events to date. Shotbox is not just a DJ act — it is a complete production aesthetic.",
+    genre: ["House", "Bass"],
+    stage: "Main Stage",
+    setTime: "6:00 PM",
+    socials: [
+      { platform: "youtube", url: "" },
+      { platform: "instagram", url: "" },
+    ],
+  },
   {
     artist: "Hazey",
     role: "Opening Act-2nd",
@@ -133,7 +133,7 @@ He remains a fixture at the world's most prestigious festivals including Ultra M
 ];
 
 const Artists = () => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(2);
   const [selectedArtist, setSelectedArtist] = useState<Artist | null>(null);
 
   // --- High Performance Cursor Tracking ---
