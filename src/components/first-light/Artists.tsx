@@ -60,7 +60,7 @@ const AXWELL_EXTRA: ArtistExtra = {
 const ArtistsData: Artist[] = [
   {
     artist: "MR Shotbox",
-    role: "Opening Act-3rd",
+    role: "Opening Act-2rd",
     imageUrl: shotbox.src,
     bio: "Shotbox is Karachi's most ambitious alternative electronic music collective — an SECP-registered production venture that fuses fine art, kinetic sculptural installations, and MADRIX lighting technology with premium house music. Behind the decks, Mr. Shotbox delivers immersive sets spanning orchestral techno, melodic house, and cinematic soundscapes. The platform has hosted and collaborated with global headliners including Miss Monique, HOSH, Eelke Kleijn, Nick Devon, and Darin Epsilon, and has produced some of Pakistan's most visually and sonically ambitious electronic events to date. Shotbox is not just a DJ act — it is a complete production aesthetic.",
     genre: ["House", "Bass"],
@@ -73,7 +73,7 @@ const ArtistsData: Artist[] = [
   },
   {
     artist: "Hazey",
-    role: "Opening Act-2nd",
+    role: "Opening Act-1st",
     imageUrl: hazey.src,
     bio: "Hazey is a pioneering British-Pakistani artist based in Islamabad and Pakistan's first female producer of progressive house. Since beginning her EDM journey in 2019, she has become a defining voice in Pakistan's underground electronic scene.Her international journey began in 2024 with her debut at Lost in the Clouds, the official afters of We Are Lost Festival in Sri Lanka, where Guy J, Chicola and Mike Rish headlined the main event. She returned to Sri Lanka in 2025 for Coastline Events alongside Ruben Karapetyan, followed by a 2026 headline performance for Beat Synth, Dr. Green & Friends. With multiple international appearances, Hazey has established herself as one of Pakistan's most internationally active electronic artist Her sound blends progressive, organic and deep house, combining deep emotion with melodic precision and a distinctly underground edge.",
     genre: ["Melodic", "Deep House"],
@@ -119,7 +119,7 @@ He remains a fixture at the world's most prestigious festivals including Ultra M
   },
   {
     artist: "Bilal Brohi",
-    role: "Opening Act-1st",
+    role: "Opening Act-3rd",
     imageUrl: brohiImg.src,
     bio: "A veteran of Pakistan's electronic music scene since the early 2000s, Bilal Brohi studied Music Synthesis and Sound Design in Malaysia before building a reputation as one of the country's most technically accomplished house music DJs. He has performed internationally across Pakistan, Malaysia, Morocco, Turkey, and Sri Lanka alongside names including Anthony Pappa, Dave Seaman, Nick Devon, and Matthias Meyer. Known for seamless transitions and emotionally immersive sets, he has appeared at the Rod Music Festival, Firin Istanbul, and countless underground club nights — consistently delivering performances that bridge the gap between the casual listener and the devoted dance floor purist.",
     genre: ["Techno", "Underground"],

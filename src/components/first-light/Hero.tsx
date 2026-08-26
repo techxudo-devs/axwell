@@ -11,14 +11,14 @@ import Image from "next/image";
 
 // Desktop configuration
 const HERO_DESKTOP = {
-  src: "/hero2.png",
+  src: "/heroimage.png",
   width: 1600,
   height: 874,
 } as const;
 
 // Mobile configuration
 const HERO_MOBILE = {
-  src: "/hero1.png",
+  src: "/heromobile.png",
   width: 768,
   height: 1024,
 } as const;
