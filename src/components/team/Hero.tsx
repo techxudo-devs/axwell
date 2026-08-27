@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
       name: "Khairaza Khan",
       role: "Senior Manager",
       img: "/images/image7.jpeg",
-      bio: "Khairaza Khan oversees production logistics as Senior Manager, handling planning, resources, and on-ground coordination. His attention to detail ensures every OP Productions event and shoot runs seamlessly from first call to final wrap.",
+      bio: "Khairaza Khan oversees production logistics as Senior Manager, handling planning, resources, and on-ground coordination. Her attention to detail ensures every OP Productions event and shoot runs seamlessly from first call to final wrap.",
     },
     {
       id: "08",
