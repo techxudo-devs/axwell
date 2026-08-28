@@ -78,7 +78,7 @@ const Main = () => {
         style={{ transitionDuration: `${SITE_REVEAL_MS}ms` }}
         aria-hidden={showIntro && !siteRevealed}
       >
-        <TopBanner />
+        {!showIntro && <TopBanner />}
         <Hero />
         <Revealing />
         <ImpactStats />

@@ -2,9 +2,7 @@
 
 import { Ticket, ChevronRight, X } from "lucide-react";
 import EventCountdown from "./EventCountdown";
-
-// Early Bird discount window closes 48h after sale start (22 Aug 2026, 5:00 PM PKT)
-const EARLY_BIRD_ENDS_AT = new Date("2026-08-31T17:00:00+05:00");
+import { EARLY_BIRD_ENDS_AT, isEarlyBirdActive } from "@/lib/earlyBird";
 
 
 interface CountdownIntroModalProps {
@@ -76,11 +74,14 @@ const CountdownIntroModal = ({ active, onClose }: CountdownIntroModalProps) => {
               </h2>
             </div>
 
-            <EventCountdown
-              className="gap-1.5 sm:gap-3"
-              targetDate={EARLY_BIRD_ENDS_AT}
-              maxDurationMs={48 * 60 * 60 * 1000}
-            />
+            {isEarlyBirdActive() ? (
+              <EventCountdown
+                className="gap-1.5 sm:gap-3"
+                targetDate={EARLY_BIRD_ENDS_AT}
+              />
+            ) : (
+              <EventCountdown className="gap-1.5 sm:gap-3" />
+            )}
 
             <div className="mt-7 grid grid-cols-2 gap-2 border-t border-white/8 pt-6">
               {[

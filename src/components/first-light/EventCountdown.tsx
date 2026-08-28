@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 const DEFAULT_TARGET = new Date(2026, 8, 19, 17, 0, 0).getTime();
 
@@ -27,25 +27,25 @@ const EventCountdown = ({
   onComplete,
   maxDurationMs,
 }: EventCountdownProps) => {
-  const targetTime = useRef(targetDate ? targetDate.getTime() : DEFAULT_TARGET);
+  const targetMs = targetDate ? targetDate.getTime() : DEFAULT_TARGET;
 
-  const getTimeLeft = () => {
-    let diff = targetTime.current - Date.now();
+  const calcTimeLeft = () => {
+    let diff = targetMs - Date.now();
     if (maxDurationMs !== undefined && diff > maxDurationMs) {
       diff = maxDurationMs;
     }
     return Math.max(0, Math.floor(diff / 1000));
   };
 
-  const [timeLeft, setTimeLeft] = useState(getTimeLeft);
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(getTimeLeft);
+    setTimeLeft(calcTimeLeft());
+    const timer = window.setInterval(() => {
+      setTimeLeft(calcTimeLeft());
     }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+    return () => window.clearInterval(timer);
+  }, [targetMs, maxDurationMs]);
 
   useEffect(() => {
     if (timeLeft === 0 && onComplete) {

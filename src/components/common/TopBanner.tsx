@@ -2,79 +2,63 @@
 
 import React, { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
+import { EARLY_BIRD_ENDS_AT, isEarlyBirdActive } from "@/lib/earlyBird";
 
-// ============================================================
-// CONFIG — everything is automatic, no manual switching needed
-// ============================================================
-// Countdown starts on its own at this moment and runs for 48 hours.
-// Before launch  → placeholder text ("Will Be Displayed Soon")
-// After launch   → live 48h countdown
-// After 48 hours → bar hides itself completely
-const COUNTDOWN_START = "2026-08-22T17:00:00+05:00";
-
-const DURATION_MS = 48 * 60 * 60 * 1000;
-const START_MS = new Date(COUNTDOWN_START).getTime();
-const END_MS = START_MS + DURATION_MS;
-// ============================================================
-
-const formatUnit = (value: number) => String(value).padStart(2, "0");
+const END_MS = EARLY_BIRD_ENDS_AT.getTime();
+const pad = (n: number) => String(n).padStart(2, "0");
 
 const TopBanner = () => {
-  const [now, setNow] = useState<number | null>(null);
+  const [active, setActive] = useState(false);
+  const [remaining, setRemaining] = useState(0);
 
   useEffect(() => {
-    setNow(Date.now());
-    const interval = window.setInterval(() => setNow(Date.now()), 1000);
+    const tick = () => {
+      setActive(isEarlyBirdActive());
+      setRemaining(Math.max(0, END_MS - Date.now()));
+    };
+    tick();
+    const interval = window.setInterval(tick, 1000);
     return () => window.clearInterval(interval);
   }, []);
 
-  // null (pre-hydration) renders as waiting to avoid SSR mismatch
-  const phase =
-    now === null || now < START_MS ? "waiting" : now < END_MS ? "live" : "expired";
+  if (!active) return null;
 
-  // Before launch the timer sits at the full 48h; once live it ticks down
-  const shown = phase === "live" ? Math.max(0, END_MS - (now ?? START_MS)) : DURATION_MS;
-  const hours = Math.floor(shown / 3_600_000);
-  const minutes = Math.floor((shown % 3_600_000) / 60_000);
-  const seconds = Math.floor((shown % 60_000) / 1000);
+  const days = Math.floor(remaining / 86_400_000);
+  const hours = Math.floor((remaining % 86_400_000) / 3_600_000);
+  const minutes = Math.floor((remaining % 3_600_000) / 60_000);
+  const seconds = Math.floor((remaining % 60_000) / 1000);
 
-  // Hide completely once the offer window has passed
-  if (phase === "expired") return null;
+  const units =
+    days > 0
+      ? [
+          { value: pad(days), label: "D" },
+          { value: pad(hours), label: "H" },
+          { value: pad(minutes), label: "M" },
+          { value: pad(seconds), label: "S" },
+        ]
+      : [
+          { value: pad(hours), label: "H" },
+          { value: pad(minutes), label: "M" },
+          { value: pad(seconds), label: "S" },
+        ];
 
   return (
-    <div className="relative z-[70] w-full overflow-hidden border-b border-[#0FB6AE]/25 bg-gradient-to-r from-[#18060F] via-[#2A0A1E] to-[#18060F] text-white">
-      {/* Teal glow accents */}
-      <div className="absolute -top-8 left-1/4 h-16 w-64 rounded-full bg-[#0FB6AE]/15 blur-3xl pointer-events-none" />
-      <div className="absolute -top-8 right-1/4 h-16 w-64 rounded-full bg-[#0FB6AE]/10 blur-3xl pointer-events-none" />
+    <div className="relative z-30 w-full border-b border-[#0FB6AE]/20 bg-[#18060F]/95 text-white backdrop-blur-sm">
+      <div className="mx-auto flex h-7 max-w-[1400px] items-center justify-center gap-2 px-3 sm:h-8 sm:gap-2.5 sm:px-4">
+        <Sparkles size={10} className="shrink-0 text-[#0FB6AE] animate-pulse" />
 
-      <div className="relative flex items-center justify-center gap-3 px-4 py-2.5 select-none">
-        <Sparkles size={14} className="text-[#0FB6AE] shrink-0 animate-pulse" />
-
-        <p className="font-just text-[10px] sm:text-xs font-medium uppercase tracking-wider whitespace-nowrap">
-          <span className="text-[#0FB6AE] font-bold">Early Bird Discount</span>
-          <span className="text-white/80"> Ends In</span>
+        <p className="font-just text-[8px] font-medium uppercase tracking-wide whitespace-nowrap sm:text-[9px]">
+          <span className="font-bold text-[#0FB6AE]">Early Bird</span>
+          <span className="text-white/70"> · Ends In</span>
         </p>
 
-        {/* Countdown */}
-        <div className="flex items-center gap-1 font-just text-[11px] sm:text-sm font-bold tabular-nums">
-          {[
-            { value: formatUnit(hours), label: "HRS" },
-            { value: formatUnit(minutes), label: "MIN" },
-            { value: formatUnit(seconds), label: "SEC" },
-          ].map((unit, i) => (
+        <div className="flex items-center gap-0.5 font-just text-[9px] font-bold tabular-nums sm:text-[10px]">
+          {units.map((unit, i) => (
             <React.Fragment key={unit.label}>
-              {i > 0 && <span className="text-[#0FB6AE]">:</span>}
-              <div className="flex flex-col items-center">
-                <span
-                  className={`inline-flex min-w-[26px] sm:min-w-[30px] items-center justify-center rounded-md border px-1 py-0.5 ${
-                    phase === "live"
-                      ? "border-white/15 bg-white/5 shadow-[0_0_12px_rgba(15,182,174,0.2)]"
-                      : "border-white/10 bg-white/[0.03] opacity-70"
-                  }`}
-                >
-                  {unit.value}
-                </span>
-              </div>
+              {i > 0 && <span className="text-[#0FB6AE]/50">:</span>}
+              <span className="inline-flex min-w-[18px] items-center justify-center rounded border border-white/10 bg-white/[0.04] px-0.5 py-px sm:min-w-[20px]">
+                {unit.value}
+              </span>
             </React.Fragment>
           ))}
         </div>

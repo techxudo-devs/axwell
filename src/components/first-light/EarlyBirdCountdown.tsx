@@ -3,23 +3,22 @@
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
 import EventCountdown from "./EventCountdown";
-
-// Early Bird discount window closes 48h after sale start (22 Aug 2026, 5:00 PM PKT)
-const EARLY_BIRD_ENDS_AT = new Date("2026-08-31T17:00:00+05:00");
+import { EARLY_BIRD_ENDS_AT, isEarlyBirdActive } from "@/lib/earlyBird";
 
 const EarlyBirdCountdown = () => {
-  const [expired, setExpired] = useState(false);
+  const [active, setActive] = useState(false);
 
-  // Hide entirely once the Early Bird window has passed
   useEffect(() => {
-    if (Date.now() >= EARLY_BIRD_ENDS_AT.getTime()) setExpired(true);
+    const sync = () => setActive(isEarlyBirdActive());
+    sync();
+    const interval = window.setInterval(sync, 1000);
+    return () => window.clearInterval(interval);
   }, []);
 
-  if (expired) return null;
+  if (!active) return null;
 
   return (
     <div className="group relative mb-8 flex w-full max-w-[850px] flex-col items-center justify-center gap-3 overflow-hidden px-4 py-4 sm:flex-row sm:gap-6 sm:px-8">
-      {/* Teal glow accents */}
       <div className="pointer-events-none absolute -top-12 left-1/4 h-20 w-56 rounded-full bg-[#0FB6AE]/10 blur-3xl" />
       <div className="pointer-events-none absolute -top-12 right-1/4 h-20 w-56 rounded-full bg-[#18060F]/15 blur-3xl" />
 
@@ -35,8 +34,7 @@ const EarlyBirdCountdown = () => {
       <EventCountdown
         compact
         targetDate={EARLY_BIRD_ENDS_AT}
-        maxDurationMs={48 * 60 * 60 * 1000}
-        onComplete={() => setExpired(true)}
+        onComplete={() => setActive(false)}
         className="scale-[0.85] sm:scale-90 lg:scale-100"
       />
     </div>
