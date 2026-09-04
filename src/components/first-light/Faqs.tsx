@@ -69,7 +69,7 @@ const faqsData: FAQItem[] = [
     id: 4,
     category: 'FAQ',
     question: 'Where is the Venue?',
-    answer: "First Light is an open-air event at DHA Golf Club (Moin Khan Academy), Zone B / Phase 8, Karachi. On-site parking and ride-hailing drop-off are available at Gate A. Full directions, your gate and a venue map arrive in your confirmation email. Strictly 18+.",
+    answer: "First Light is an open-air event at DHA Sports Club (Moin Khan Academy), Zone B / Phase 8, Karachi. On-site parking and ride-hailing drop-off are available at Gate A. Full directions, your gate and a venue map arrive in your confirmation email. Strictly 18+.",
   },
   {
     id: 5,

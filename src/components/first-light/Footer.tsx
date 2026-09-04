@@ -18,7 +18,7 @@ const MARQUEE_ITEMS = [
   "FIRST LIGHT",
   "Axwell LIVE",
   "19 SEP 2026",
-  "DHA Golf Club (MOIN KHAN ACADEMY)",
+  "DHA Sports Club (MOIN KHAN ACADEMY)",
   "KARACHI",
   "GATES FROM 4:00 PM",
 ];
@@ -103,7 +103,7 @@ const Footer = () => {
           <span className="mx-1.5 sm:mx-2 text-[#18060F]">•</span>
            19 September 2026
           <span className="mx-1.5 sm:mx-2 text-[#18060F]">•</span>
-          DHA Golf Club (Moin Khan Academy)
+          DHA Sports Club (Moin Khan Academy)
         </p>
 
         {/* CTA + countdown */}

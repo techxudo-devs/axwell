@@ -20,7 +20,7 @@ const venueDetails = [
   {
     icon: MapPinned,
     label: "Full Address",
-    value: "DHA Golf Club (Moin Khan Academy), Zone B / Phase 8, Karachi, Pakistan",
+    value: "DHA Sports Club (Moin Khan Academy), Zone B / Phase 8, Karachi, Pakistan",
     accent: "lime" as const,
   },
   {
@@ -179,7 +179,7 @@ const Venue = () => {
             <div className="pointer-events-none absolute inset-0 rounded-[32px] ring-1 ring-inset ring-white/5 z-20" />
 
             <iframe
-              title="DHA Golf Club (Moin Khan Academy) location map"
+              title="DHA Sports Club (Moin Khan Academy) location map"
               src={MAP_EMBED}
               className="absolute inset-0 w-full h-full border-0 transition-all duration-700 scale-[1.02] group-hover:scale-[1.08]"
               style={{
@@ -203,7 +203,7 @@ const Venue = () => {
                 </div>
               </div>
               <p className={`font-just text-[22px] text-gray-300 uppercase drop-shadow-md`}>
-                DHA Golf Club (Moin Khan Academy)
+                DHA Sports Club (Moin Khan Academy)
               </p>
               <p className="text-[12px] uppercase tracking-wider text-white/60 mt-1">
                 Zone B, Phase 8 · Karachi, Pakistan
