@@ -111,7 +111,7 @@ const Venue = () => {
                   className={`font-just text-[30px] sm:text-[44px] md:text-[54px] leading-[0.9] uppercase`}
                 >
                   <span className="bg-gradient-to-r from-white via-white to-[#0FB6AE] bg-clip-text text-transparent">
-                    DHA GOLD CLUB (Moin{" "}
+                    DHA SPORTS CLUB (Moin{" "}
                   </span>
                   <span className="bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,255,255,0.25)]">
                     Khan Academy)

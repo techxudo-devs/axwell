@@ -3,7 +3,6 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import EventCountdown from "./EventCountdown";
-import { EARLY_BIRD_ENDS_AT, isEarlyBirdActive } from "@/lib/earlyBird";
 
 const FOOTER_LINKS = [
   { label: "Lineup", href: "#artists" },
@@ -116,11 +115,7 @@ const Footer = () => {
             Grab Your Tickets
             <ArrowUpRight size={16} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 sm:size-[18px]" />
           </a>
-          {isEarlyBirdActive() ? (
-            <EventCountdown compact targetDate={EARLY_BIRD_ENDS_AT} />
-          ) : (
-            <EventCountdown compact />
-          )}
+          <EventCountdown compact />
         </div>
 
         {/* Nav */}
