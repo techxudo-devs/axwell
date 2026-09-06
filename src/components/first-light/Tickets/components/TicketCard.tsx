@@ -48,7 +48,7 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
           <div className={`flex flex-col gap-1 text-[10px] md:text-[11px] font-medium tracking-wider ${secondaryTextColor} uppercase`}>
             <span className="flex items-center gap-2 tracking-tight">
               <Clock size={13} className={`${textColor} md:block hidden`} />
-              {ticket.gateLabel} · from {ticket.gates}</span>
+              Gate from 4:00 PM</span>
             <div className="flex items-center gap-2 tracking-tight">
               <Ticket size={13} className={`${textColor} md:block hidden`} />
               <span>Max {ticket.maxPerID} per ID</span>

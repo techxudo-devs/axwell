@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import Venue from '@/components/first-light/Venue';
 import { CircleQuestionMark, Mail, ChevronDown, Loader2, CheckCircle, Send } from 'lucide-react';
@@ -98,61 +99,84 @@ const faqsData: FAQItem[] = [
   },
 ];
 
-interface ClockItem {
-  name: string;
-  hours: number; 
-  minutes: number;
-  label: string; 
-}
+const DOOR_HOURS = 4; // 4 PM
+const DOOR_MINUTES = 0;
 
-const clocksData: ClockItem[] = [
-  { name: 'BRONZE', hours: 16, minutes: 0, label: '4:00 PM · Gate 4' },
-  { name: 'SILVER', hours: 16, minutes: 0, label: '4:00 PM · Gate 3' },
-  { name: 'GOLD', hours: 16, minutes: 15, label: '4:15 PM · Gate 2' },
-  { name: 'PLATINUM', hours: 16, minutes: 30, label: '4:30 PM · Gate 1' },
-  { name: 'VIP', hours: 16, minutes: 0, label: '4:00 PM · Gate 1' },
-];
-
-const AnalogClock = ({ name, hours, minutes, label }: ClockItem) => {
-  const minuteAngle = minutes * 6; 
-  const hourAngle = ((hours % 12) + minutes / 60) * 30; 
+const AnimatedDoorClock = () => {
+  const hourAngle = ((DOOR_HOURS % 12) + DOOR_MINUTES / 60) * 30;
+  const minuteAngle = DOOR_MINUTES * 6;
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative w-[120px] h-[120px] rounded-full bg-[#120114] border-2 border-[#0FB6AE]/40 shadow-[0_0_25px_rgba(15,182,174,0.15)]">
-        {Array.from({ length: 12 }).map((_, i) => (
-          <span
-            key={i}
-            className="absolute left-1/2 top-1/2 h-[6px] w-[2px] bg-[#0FB6AE]/50"
-            style={{
-              transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-52px)`,
-            }}
+    <div className="flex flex-col items-center gap-6">
+      <div className="relative flex flex-col items-center">
+        <motion.div
+          className="relative w-[180px] h-[180px] rounded-full bg-[#120114] border-2 border-[#0FB6AE]/40 shadow-[0_0_50px_rgba(15,182,174,0.3)]"
+          initial={{ scale: 0.6, opacity: 0, rotate: -12 }}
+          whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ type: "spring", stiffness: 120, damping: 14 }}
+        >
+          {Array.from({ length: 12 }).map((_, i) => (
+            <motion.span
+              key={i}
+              className="absolute left-1/2 top-1/2 h-[8px] w-[3px] bg-[#0FB6AE]/60"
+              style={{
+                transform: `translate(-50%, -50%) rotate(${i * 30}deg) translateY(-78px)`,
+              }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 + i * 0.04 }}
+            />
+          ))}
+
+          {/* Hour hand */}
+          <motion.span
+            className="absolute left-1/2 top-1/2 w-[5px] h-[52px] rounded-full bg-white"
+            style={{ transformOrigin: "50% 100%" }}
+            initial={{ x: "-50%", y: "-100%", rotate: 0 }}
+            animate={{ x: "-50%", y: "-100%", rotate: hourAngle }}
+            transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
           />
-        ))}
 
-        <span
-          className="absolute left-1/2 top-1/2 w-[4px] h-[34px] rounded-full bg-white origin-bottom"
-          style={{
-            transform: `translate(-50%, -100%) rotate(${hourAngle}deg)`,
-          }}
+          {/* Minute hand */}
+          <motion.span
+            className="absolute left-1/2 top-1/2 w-[3px] h-[70px] rounded-full bg-[#0FB6AE]"
+            style={{ transformOrigin: "50% 100%" }}
+            initial={{ x: "-50%", y: "-100%", rotate: 0 }}
+            animate={{ x: "-50%", y: "-100%", rotate: minuteAngle }}
+            transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+
+          {/* Center cap */}
+          <span
+            className="absolute left-1/2 top-1/2 w-[12px] h-[12px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0FB6AE] shadow-[0_0_15px_rgba(15,182,174,0.8)]"
+          />
+        </motion.div>
+
+        {/* Soft pulsing halo behind the clock */}
+        <motion.div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 rounded-full bg-[#0FB6AE]/10 blur-2xl"
+          animate={{ scale: [1, 1.15, 1], opacity: [0.4, 0.7, 0.4] }}
+          transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
         />
-
-        <span
-          className="absolute left-1/2 top-1/2 w-[2px] h-[46px] rounded-full bg-[#18060F] origin-bottom"
-          style={{
-            transform: `translate(-50%, -100%) rotate(${minuteAngle}deg)`,
-          }}
-        />
-
-        <span className="absolute left-1/2 top-1/2 w-[10px] h-[10px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#0FB6AE]" />
       </div>
 
-      <div className="flex flex-col items-center">
-        <span className="text-[15px] font-medium uppercase tracking-wider text-[#0FB6AE]">
-          {name}
+      <motion.div
+        className="flex flex-col items-center"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+      >
+        <span className="text-[15px] font-medium uppercase tracking-widest text-[#0FB6AE]">
+          Doors open
         </span>
-        <span className="text-[13px] font-medium text-white/80">{label}</span>
-      </div>
+        <span className="mt-1 text-[32px] md:text-[40px] font-just leading-none text-white drop-shadow-[0_0_20px_rgba(15,182,174,0.5)]">
+          4:00 PM
+        </span>
+      </motion.div>
     </div>
   );
 };
@@ -208,10 +232,8 @@ const Faqs = () => {
         >
           Doors Open
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 justify-items-center">
-          {clocksData.map((clock) => (
-            <AnalogClock key={clock.name} {...clock} />
-          ))}
+        <div className="flex justify-center">
+          <AnimatedDoorClock />
         </div>
       </div>
 

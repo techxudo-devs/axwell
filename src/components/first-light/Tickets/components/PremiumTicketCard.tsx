@@ -38,7 +38,7 @@ const PremiumTicketCard = ({ ticket, onDetails }: TicketCardProps) => {
           <div className="flex items-center gap-2">
             <Clock size={13} className="text-[#0FB6AE]" />
             <span>
-              {ticket.gateLabel} · from <span className="text-[#0FB6AE]">{ticket.gates}</span>
+              Gate from 4:00 PM
             </span>
           </div>
           <div className="flex items-center gap-2">
