@@ -14,6 +14,8 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
         return "linear-gradient(110deg, #4b5563 0%, #9ca3af 40%, #cbd5e1 50%, #9ca3af 70%, #4b5563 100%)";
       case "gold":
         return "linear-gradient(110deg, #b8860b 0%, #d4af37 40%, #fbbf24 50%, #d4af37 70%, #b8860b 100%)";
+      case "youth":
+        return "linear-gradient(110deg, #064e47 0%, #0FB6AE 40%, #5eead4 50%, #0FB6AE 70%, #064e47 100%)";
       case "gold-women":
         return "linear-gradient(110deg, #be123c 0%, #f43f5e 40%, #fb7185 50%, #f43f5e 70%, #be123c 100%)";
       case "vip":
@@ -38,17 +40,31 @@ const TicketCard = ({ ticket, onDetails }: TicketCardProps) => {
       <TicketEdgeNotches side="left" />
 
       <div className="flex flex-col justify-between flex-1 p-5 pr-8 select-none">
-        <h3
-          className={`font-just text-[24px] sm:text-[34px] md:text-[38px] leading-none ${textColor}`}
-        >
-          {ticket.name}
-        </h3>
+        <div>
+          {ticket.id === "youth" && (
+            <p className={`font-just text-[10px] sm:text-[11px] uppercase tracking-wider ${secondaryTextColor} mb-0.5`}>
+              First Light
+            </p>
+          )}
+          <h3
+            className={`font-just leading-none ${textColor} ${
+              ticket.id === "youth"
+                ? "text-[20px] sm:text-[26px] md:text-[30px]"
+                : "text-[24px] sm:text-[34px] md:text-[38px]"
+            }`}
+          >
+            {ticket.name}
+          </h3>
+        </div>
 
         <div className="flex items-end justify-between gap-2">
           <div className={`flex flex-col gap-1 text-[10px] md:text-[11px] font-medium tracking-wider ${secondaryTextColor} uppercase`}>
             <span className="flex items-center gap-2 tracking-tight">
               <Clock size={13} className={`${textColor} md:block hidden`} />
-              Gate from 4:00 PM</span>
+              {ticket.gateLabel} · {ticket.gates}</span>
+            {ticket.id === "youth" && (
+              <span className="tracking-tight">Ages 15–18</span>
+            )}
             <div className="flex items-center gap-2 tracking-tight">
               <Ticket size={13} className={`${textColor} md:block hidden`} />
               <span>Max {ticket.maxPerID} per ID</span>

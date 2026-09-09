@@ -188,6 +188,166 @@ img {
   box-shadow: 0 0 20px rgba(24, 6, 15, 0.15);
 }
 
+.hero-countdown-box {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06) 0%, rgba(14, 1, 14, 0.75) 100%);
+  box-shadow: 0 0 20px rgba(15, 182, 174, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-modal-backdrop {
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-modal-backdrop-open {
+  opacity: 1;
+}
+
+.hero-modal-backdrop-close {
+  opacity: 0;
+}
+
+.hero-modal-panel {
+  opacity: 0;
+  transform: translateY(24px) scale(0.96);
+  transition:
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-modal-panel-open {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hero-modal-panel-close {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+}
+
+.site-reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  filter: blur(8px);
+  pointer-events: none;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+}
+
+@keyframes youth-neon-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes youth-banner-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+.youth-banner-zoom {
+  animation: youth-banner-zoom 6s ease-in-out infinite alternate;
+}
+
+@keyframes youth-price-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(15, 182, 174, 0.2), inset 0 0 12px rgba(15, 182, 174, 0.05);
+  }
+  50% {
+    box-shadow: 0 0 36px rgba(15, 182, 174, 0.45), inset 0 0 20px rgba(15, 182, 174, 0.12);
+  }
+}
+
+@keyframes youth-shimmer {
+  0% { transform: translateX(-120%) skewX(-12deg); }
+  100% { transform: translateX(220%) skewX(-12deg); }
+}
+
+@keyframes youth-modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes youth-title-glow {
+  0%, 100% { text-shadow: 0 0 20px rgba(15, 182, 174, 0.35); }
+  50% { text-shadow: 0 0 32px rgba(15, 182, 174, 0.65), 0 0 48px rgba(15, 182, 174, 0.25); }
+}
+
+.youth-modal-neon {
+  position: relative;
+  overflow: hidden;
+}
+
+.youth-modal-neon::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    rgba(15, 182, 174, 0.7) 12%,
+    transparent 24%,
+    rgba(255, 255, 255, 0.35) 36%,
+    transparent 48%,
+    rgba(15, 182, 174, 0.5) 60%,
+    transparent 72%
+  );
+  animation: youth-neon-spin 5s linear infinite;
+}
+
+.youth-price-glow {
+  animation: youth-price-glow 2.4s ease-in-out infinite;
+}
+
+.youth-title-glow {
+  animation: youth-title-glow 2.8s ease-in-out infinite;
+}
+
+.youth-shimmer-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.youth-shimmer-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 65%
+  );
+  animation: youth-shimmer 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.hero-modal-panel-open .youth-modal-stagger {
+  opacity: 0;
+  animation: youth-modal-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-modal-panel-open .youth-modal-stagger-1 { animation-delay: 0.08s; }
+.hero-modal-panel-open .youth-modal-stagger-2 { animation-delay: 0.16s; }
+.hero-modal-panel-open .youth-modal-stagger-3 { animation-delay: 0.24s; }
+.hero-modal-panel-open .youth-modal-stagger-4 { animation-delay: 0.32s; }
+.hero-modal-panel-open .youth-modal-stagger-5 { animation-delay: 0.4s; }
+.hero-modal-panel-open .youth-modal-stagger-6 { animation-delay: 0.48s; }
+
 .hero-parallax {
   --mx: 0;
   --my: 0;
@@ -445,8 +605,19 @@ img {
   .hero-beam,
   .hero-flip,
   .hero-sparkle,
-  .hero-particle {
+  .hero-particle,
+  .youth-modal-neon::before,
+  .youth-price-glow,
+  .youth-title-glow,
+  .youth-shimmer-wrap::after,
+  .youth-banner-zoom,
+  .hero-modal-panel-open .youth-modal-stagger {
     animation: none;
+  }
+
+  .hero-modal-panel-open .youth-modal-stagger {
+    opacity: 1;
+    transform: none;
   }
 
   .hero-px-far,

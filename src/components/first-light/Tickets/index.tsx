@@ -127,6 +127,12 @@ const Tickets = () => {
               }
             />
             <TicketCard
+              ticket={getTicketById("youth")}
+              onDetails={(ticket) =>
+                setActiveModal({ type: "details", ticket })
+              }
+            />
+            <TicketCard
               ticket={getTicketById("gold-women")}
               onDetails={(ticket) =>
                 setActiveModal({ type: "details", ticket })
@@ -138,18 +144,18 @@ const Tickets = () => {
                 setActiveModal({ type: "details", ticket })
               }
             />
+          </div>
+
+          <div className="flex w-full justify-center">
+            <div className="w-full md:w-[calc(50%-12px)]">
               <TicketCard
                 ticket={getTicketById("platinum")}
                 onDetails={(ticket) =>
                   setActiveModal({ type: "details", ticket })
                 }
               />
-          </div>
-
-          {/* <div className="flex justify-center w-full my-2">
-            <div className="w-full md:max-w-[448px]">
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 
